@@ -1,0 +1,14 @@
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\bin\Debug\net6.0\InventoryManagement.Domain.deps.json
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\bin\Debug\net6.0\InventoryManagement.Domain.runtimeconfig.json
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\bin\Debug\net6.0\InventoryManagement.Domain.dll
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\bin\Debug\net6.0\InventoryManagement.Domain.pdb
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.csproj.AssemblyReference.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.AssemblyInfoInputs.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.AssemblyInfo.cs
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.dll
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\refint\InventoryManagement.Domain.dll
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.pdb
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\InventoryManagement.Domain.genruntimeconfig.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Domain\obj\Debug\net6.0\ref\InventoryManagement.Domain.dll
