@@ -1,0 +1,17 @@
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\bin\Debug\net6.0\InventoryManagement.Infrastructure.deps.json
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\bin\Debug\net6.0\InventoryManagement.Infrastructure.runtimeconfig.json
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\bin\Debug\net6.0\InventoryManagement.Infrastructure.dll
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\bin\Debug\net6.0\InventoryManagement.Infrastructure.pdb
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\bin\Debug\net6.0\InventoryManagement.Domain.dll
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\bin\Debug\net6.0\InventoryManagement.Domain.pdb
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.csproj.AssemblyReference.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.AssemblyInfo.cs
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.csproj.CopyComplete
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.dll
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\refint\InventoryManagement.Infrastructure.dll
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.pdb
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\InventoryManagement.Infrastructure.genruntimeconfig.cache
+C:\Assignments\InventoryManagement\InventoryManagement.Infrastructure\obj\Debug\net6.0\ref\InventoryManagement.Infrastructure.dll
