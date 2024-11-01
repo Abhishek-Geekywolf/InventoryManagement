@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [NgSelectModule],
+  imports: [NgSelectModule,RouterLink],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
 })
