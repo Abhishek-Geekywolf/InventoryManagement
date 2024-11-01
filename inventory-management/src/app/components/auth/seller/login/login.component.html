@@ -33,12 +33,12 @@
                     <div class="">
                       
                       <label>Dont have an account? </label>
-                      <a href="" class="text-secondary"> Register</a>
+                      <a href="" class="text-secondary" routerLink="/seller/signup"> Register</a>
                     </div>
                     
                   </div>
 
-                <button type="submit" class="btn btn-success" [disabled]="sellerloginForm.invalid">Login</button>
+                <button type="submit" class="btn btn-success" [disabled]="sellerloginForm.invalid" routerLink="/dash" routerLinkActive="active">Login</button>
             </form>
         </div>
     </div>
