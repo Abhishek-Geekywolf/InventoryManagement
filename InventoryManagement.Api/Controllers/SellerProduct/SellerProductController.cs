@@ -1,5 +1,6 @@
 ﻿using InventoryManagement.Application.Requests.Commands.SellerCommands;
 using InventoryManagement.Application.Requests.Commands.SellerProductCommands;
+using InventoryManagement.Application.Requests.DTOs;
 using InventoryManagement.Application.Requests.Queries.SellerProductsQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -30,5 +31,21 @@ namespace InventoryManagement.Api.Controllers.SellerProduct
 
             return await _mediator.Send(command);
         }
+
+        [HttpGet("name")]
+        public async Task<List<SellerProductDto>> GetSellerProductByName(string name)
+        {
+            GetSellerProductByNameQuery query = new GetSellerProductByNameQuery();
+            query.getname = name;
+            return await _mediator.Send(query);
+        }
+
+        //[HttpGet("id")]
+        //public async Task<int> GetSellerProductById(int id)
+        //{
+        //    GetSellerProductByIDQuery query = new GetSellerProductByIDQuery();
+        //    query.getid = id;
+        //    return await _mediator.Send(query);
+        //}
     }
 }

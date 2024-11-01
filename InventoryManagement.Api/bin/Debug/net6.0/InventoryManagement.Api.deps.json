@@ -513,7 +513,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
         },
         "runtime": {
-          "InventoryManagement.Application.dll": {}
+          "InventoryManagement.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "InventoryManagement.Domain/1.0.0": {
@@ -523,7 +526,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
         },
         "runtime": {
-          "InventoryManagement.Domain.dll": {}
+          "InventoryManagement.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "InventoryManagement.Infrastructure/1.0.0": {
@@ -534,7 +540,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
         },
         "runtime": {
-          "InventoryManagement.Infrastructure.dll": {}
+          "InventoryManagement.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

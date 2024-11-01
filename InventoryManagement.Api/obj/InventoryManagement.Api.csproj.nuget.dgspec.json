@@ -1,39 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Assignments\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj": {}
+    "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj": {}
   },
   "projects": {
-    "C:\\Assignments\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj": {
+    "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj",
+        "projectUniqueName": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj",
         "projectName": "InventoryManagement.Api",
-        "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj",
-        "packagesPath": "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Api\\obj\\",
+        "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj",
+        "packagesPath": "C:\\Users\\athullya.r\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\abhishek.sadasivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\athullya.r\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Assignments\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
-                "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj"
+              "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
+                "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj"
               },
-              "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
-                "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj"
+              "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj"
               }
             }
           }
@@ -42,11 +42,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "MediatR": {
               "target": "Package",
@@ -90,21 +95,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Assignments\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
+    "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+        "projectUniqueName": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
         "projectName": "InventoryManagement.Application",
-        "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
-        "packagesPath": "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Application\\obj\\",
+        "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\athullya.r\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\abhishek.sadasivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\athullya.r\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -112,14 +117,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
-                "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj"
+              "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj"
               }
             }
           }
@@ -128,6 +134,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -164,26 +175,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+    "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
         "projectName": "InventoryManagement.Domain",
-        "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
-        "packagesPath": "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\obj\\",
+        "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\athullya.r\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\abhishek.sadasivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\athullya.r\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -191,6 +216,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -203,6 +229,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -239,26 +270,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
+    "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
         "projectName": "InventoryManagement.Infrastructure",
-        "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\athullya.r\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\abhishek.sadasivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\athullya.r\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -266,14 +311,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
-                "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
+              "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
               }
             }
           }
@@ -282,6 +328,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -318,12 +369,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
