@@ -1,0 +1,98 @@
+<app-customernav></app-customernav>
+
+<div class="container mt-5 pt-5">
+    <h1 class="display-6 fw-bold text-center mb-5">Orders</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-8"> 
+    
+            <h2 *ngIf="productlist" class="text-center">Your Products {{ selectedProductName }}</h2>
+
+            <table class="table table-striped table-bordered">
+                <thead class="thead-light"> 
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Sub Price</th>
+                        <th>Action</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productlist">
+                        <td>{{ product.productName.value }}</td>
+                        <td>{{ product.quantity.value }}</td>
+                        <td>{{product.price.value}}</td>
+                        <!-- subtotal logic  -->
+                        <td>
+                            <!-- <button class="btn btn-link text-danger" (click)="deleteProduct(product)"> -->
+                                <button class="btn btn-link text-danger" data-toggle="modal" data-target="#Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="productlist.length === 0">
+                        <td colspan="4" class="text-center">No orders found</td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between mt-5">
+        <h1 class="display-6 fw-bold ">Total Price:</h1>
+        <a href="#" class="btn btn-primary btn-lg  text-center c "data-toggle="modal" data-target="#BuyNow">Buy Now</a>
+
+
+    </div>
+</div>
+<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="buynow" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you Sure</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           Product Name:
+            <br>
+            
+            Quantity:<button type="button" >-</button>
+            20
+            <button type="button" >+</button>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="BuyNow" tabindex="-1" role="dialog" aria-labelledby="buynow" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Buy Now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           List of<br> Product Name:
+            <br>
+            
+            Quantity:<button type="button" >-</button>
+            20
+            <button type="button" >+</button>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
