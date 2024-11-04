@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {}
+    "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+    "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
         "projectName": "InventoryManagement.Domain",
-        "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
-        "packagesPath": "C:\\Users\\athullya.r\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Domain\\obj\\",
+        "projectPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\",
+        "outputPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\athullya.r\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abhishek.sadasivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
