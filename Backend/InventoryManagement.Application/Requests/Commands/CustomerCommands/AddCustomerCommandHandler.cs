@@ -24,6 +24,7 @@ namespace InventoryManagement.Application.Requests.Commands.CustomerCommands
             customers.Name = request.Name;
             customers.Email = request.Email;
             customers.PhoneNumber = request.PhoneNumber;
+            customers.Password = request.Password;
             _context.Customers.Add(customers);
             return await _context.SaveChangesAsync();
         }

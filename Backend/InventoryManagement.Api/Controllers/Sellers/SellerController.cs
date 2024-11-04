@@ -24,9 +24,12 @@ namespace InventoryManagement.Api.Controllers.Sellers
             return await _mediator.Send(command);
         }
         [HttpGet]
-        public async Task<List<SellerDto>>GetSeller()
+        public async Task<int>GetSeller(string email,string password)
         {
-            GetSellerQuery query = new GetSellerQuery();    
+            GetSellerQuery query = new GetSellerQuery(); 
+            query.Email = email;
+            query.Password = password;
+            
             return await _mediator.Send(query);
         }
     }

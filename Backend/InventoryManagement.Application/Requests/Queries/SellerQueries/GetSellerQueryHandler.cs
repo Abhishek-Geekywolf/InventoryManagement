@@ -1,6 +1,8 @@
 ﻿using InventoryManagement.Application.Requests.DTOs;
+using InventoryManagement.Domain.Entity;
 using InventoryManagement.Infrastructure.Data;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement.Application.Requests.Queries.SellerQueries
 {
-    public class GetSellerQueryHandler : IRequestHandler<GetSellerQuery, List<SellerDto>>
+    public class GetSellerQueryHandler : IRequestHandler<GetSellerQuery, int>
     {
         private readonly InventoryManagementContext _context;
 
@@ -18,23 +20,17 @@ namespace InventoryManagement.Application.Requests.Queries.SellerQueries
             _context = context;
         }
 
-        public async Task<List<SellerDto>> Handle(GetSellerQuery request, CancellationToken cancellationToken)
+        public async Task<int> Handle(GetSellerQuery request, CancellationToken cancellationToken)
         {
-            var re = await Task.Run(() =>
+            
+
+            var seller = await _context.Sellers.FirstOrDefaultAsync(x => x.Email == request.Email);
+            if (seller == null || request.Password!=seller.Password)
             {
-                List<SellerDto> result = new List<SellerDto>();
-                var sellers = _context.Sellers;
-                foreach (var seller in sellers)
-                {
-                    SellerDto sellerobj = new SellerDto();
-                    sellerobj.Id = seller.Id;
-                    sellerobj.Name = seller.Name;
-                    sellerobj.Email = seller.Email;
-                    result.Add(sellerobj);
-                }
-                return result;
-            });
-            return re;
+                return 0;
+            }
+           
+            return seller.Id;
         }
     }
 }

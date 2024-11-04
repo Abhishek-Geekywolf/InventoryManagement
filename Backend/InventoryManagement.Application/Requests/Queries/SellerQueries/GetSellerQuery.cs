@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement.Application.Requests.Queries.SellerQueries
 {
-    public class GetSellerQuery:IRequest<List<SellerDto>>
+    public class GetSellerQuery:IRequest<int>
     {
+        public string Email { get; set; }
+        public string Password {  get; set; }
     }
 }

@@ -20,9 +20,11 @@ namespace InventoryManagement.Api.Controllers.Customers
         }
 
         [HttpGet]
-        public async Task<List<CustomerDto>>GetCustomer()
+        public async Task<int>GetCustomer(string email,string password)
         {
             GetCustomerQuery query = new GetCustomerQuery();
+            query.Email = email;
+            query.password = password;
             return await _mediator.Send(query);
         }
 
