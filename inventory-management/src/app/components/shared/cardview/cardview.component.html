@@ -5,9 +5,58 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">Price: ${{ product.price }}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#Details">Details</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="modal fade" id="UpdateDelete" tabindex="-1" role="dialog" aria-labelledby="UpdateDelete" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Products</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         Are You sure
+          <br>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-primary">No</button>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="Details" tabindex="-1" role="dialog" aria-labelledby="Details" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Buy Now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            Product Name:
+            <br>
+            
+            Quantity:20
+            <br>
+            Price:1000
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="#UpdateDelete">Update/Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
