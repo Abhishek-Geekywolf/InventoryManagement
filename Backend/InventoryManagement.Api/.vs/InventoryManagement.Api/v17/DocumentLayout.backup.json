@@ -3,19 +3,48 @@
   "WorkspaceRootPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\Migrations\\20241104075051_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\sellerqueries\\getsellerqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BA160CD-D3BE-4884-9ED3-6A2B63181AAA}|..\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.infrastructure\\data\\inventorymanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\Migrations\\20241104074810_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\sellerqueries\\getsellerquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E637B65-1334-44C2-9488-6A36DFE91AFB}|..\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.domain\\entity\\sellers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E637B65-1334-44C2-9488-6A36DFE91AFB}|..\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.domain\\entity\\customers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.api\\controllers\\sellers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|solutionrelative:controllers\\sellers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\customerqueries\\getcustomerqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\commands\\sellercommands\\addsellercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\commands\\sellercommands\\addsellercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\customerqueries\\getcustomerquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.api\\controllers\\customers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|solutionrelative:controllers\\customers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\commands\\customercommands\\addcustomercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA160CD-D3BE-4884-9ED3-6A2B63181AAA}|..\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.infrastructure\\data\\inventorymanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E637B65-1334-44C2-9488-6A36DFE91AFB}|..\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.domain\\entity\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BA160CD-D3BE-4884-9ED3-6A2B63181AAA}|..\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.infrastructure\\migrations\\20241104075051_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\Migrations\\20241104074810_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E637B65-1334-44C2-9488-6A36DFE91AFB}|..\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj|c:\\assignments\\inventorymanagement\\backend\\inventorymanagement.domain\\entity\\orderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -28,7 +57,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -40,20 +69,161 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sellers.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Sellers.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Domain\\Entity\\Sellers.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Sellers.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Domain\\Entity\\Sellers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:11:35.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetCustomerQueryHandler.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQueryHandler.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQueryHandler.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQueryHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:06:47.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GetSellerQueryHandler.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQueryHandler.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQueryHandler.cs*",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQueryHandler.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:03:17.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetSellerQuery.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQuery.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQuery.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQuery.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerQueries\\GetSellerQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:02:44.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddSellerCommandHandler.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommandHandler.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommandHandler.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommandHandler.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommandHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:02:30.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddSellerCommand.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommand.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommand.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommand.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Commands\\SellerCommands\\AddSellerCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:02:12.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SellerController.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\Sellers\\SellerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Sellers\\SellerController.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\Sellers\\SellerController.cs",
+              "RelativeToolTip": "Controllers\\Sellers\\SellerController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA2wCAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:01:03.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetCustomerQuery.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQuery.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQuery.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQuery.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\CustomerQueries\\GetCustomerQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T08:45:28.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddCustomerCommand.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Commands\\CustomerCommands\\AddCustomerCommand.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Commands\\CustomerCommands\\AddCustomerCommand.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Commands\\CustomerCommands\\AddCustomerCommand.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Commands\\CustomerCommands\\AddCustomerCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T08:44:21.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\Customers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Customers\\CustomerController.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\Customers\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\Customers\\CustomerController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T08:44:11.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Orders.cs",
+              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Orders.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Domain\\Entity\\Orders.cs",
+              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Orders.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Domain\\Entity\\Orders.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T08:09:30.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "20241104075051_pass.cs",
               "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\Migrations\\20241104075051_pass.cs",
               "RelativeDocumentMoniker": "..\\InventoryManagement.Infrastructure\\Migrations\\20241104075051_pass.cs",
               "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\Migrations\\20241104075051_pass.cs",
               "RelativeToolTip": "..\\InventoryManagement.Infrastructure\\Migrations\\20241104075051_pass.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:50:52.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T07:50:52.109Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
               "Title": "20241104074810_pass.cs",
               "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\Migrations\\20241104074810_pass.cs",
               "RelativeDocumentMoniker": "..\\InventoryManagement.Infrastructure\\Migrations\\20241104074810_pass.cs",
@@ -61,38 +231,11 @@
               "RelativeToolTip": "..\\InventoryManagement.Infrastructure\\Migrations\\20241104074810_pass.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:48:11.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T07:48:11.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Sellers.cs",
-              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Sellers.cs",
-              "RelativeDocumentMoniker": "..\\InventoryManagement.Domain\\Entity\\Sellers.cs",
-              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Sellers.cs",
-              "RelativeToolTip": "..\\InventoryManagement.Domain\\Entity\\Sellers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:40:17.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Customers.cs",
-              "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Customers.cs",
-              "RelativeDocumentMoniker": "..\\InventoryManagement.Domain\\Entity\\Customers.cs",
-              "ToolTip": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\Customers.cs",
-              "RelativeToolTip": "..\\InventoryManagement.Domain\\Entity\\Customers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:39:56.196Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "OrderDetails.cs",
               "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\Entity\\OrderDetails.cs",
               "RelativeDocumentMoniker": "..\\InventoryManagement.Domain\\Entity\\OrderDetails.cs",
@@ -100,12 +243,11 @@
               "RelativeToolTip": "..\\InventoryManagement.Domain\\Entity\\OrderDetails.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:39:54.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T07:39:54.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "InventoryManagementContext.cs",
               "DocumentMoniker": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\Data\\InventoryManagementContext.cs",
               "RelativeDocumentMoniker": "..\\InventoryManagement.Infrastructure\\Data\\InventoryManagementContext.cs",

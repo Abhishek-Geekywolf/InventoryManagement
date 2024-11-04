@@ -4,5 +4,6 @@ export interface sellerlogin
 {
     name:FormControl<string|null>;
     email:FormControl<string|null>;
-    contactNumber:FormControl<number|null>;
+    phoneNumber:FormControl<number|null>;
+    password:FormControl<string|null>;
 }
