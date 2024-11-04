@@ -11,21 +11,22 @@ export class PurchasehistoryService {
   constructor() { }
 
   private products: Product[] = [
-    {
-        productName: new FormControl('Product A'),
-        price: new FormControl(100),
-        quantity: new FormControl(10),
-    },
-    {
-        productName: new FormControl('Product B'),
-        price: new FormControl(150),
-        quantity: new FormControl(20),
-    },
-    {
-        productName: new FormControl('Product C'),
-        price: new FormControl(200),
-        quantity: new FormControl(30),
-    },
+    // {
+
+    //     productName: new FormControl('Product A'),
+    //     price: new FormControl(100),
+    //     quantity: new FormControl(10),
+    // },
+    // {
+    //     productName: new FormControl('Product B'),
+    //     price: new FormControl(150),
+    //     quantity: new FormControl(20),
+    // },
+    // {
+    //     productName: new FormControl('Product C'),
+    //     price: new FormControl(200),
+    //     quantity: new FormControl(30),
+    // },
 ];
 private orders: Order[] = [
   {
