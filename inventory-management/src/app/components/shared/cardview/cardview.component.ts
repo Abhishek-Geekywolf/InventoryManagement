@@ -27,6 +27,8 @@ export class CardviewComponent {
     { id: 4, name: 'Product 4', price: 49.99 },
     { id: 5, name: 'Product 5', price: 59.99 },
   ];
+  // openUpdateDeleteModal() {
+  //   ('#UpdateDelete').modal('show');
 
 
 }
