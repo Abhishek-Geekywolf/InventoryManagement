@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { sellerlogin } from '../../../../models/sellerlogin';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SellerApiService } from '../../../../service/sellerapi.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,RouterLink,RouterLinkActive],
+  imports: [CommonModule,ReactiveFormsModule,RouterLink,RouterLinkActive,HttpClientModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -18,9 +20,8 @@ export class SLoginComponent implements OnInit{
 
   constructor(private fb: FormBuilder) {
     this.sellerloginForm = this.fb.group({
-      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      contactNumber: ['', [Validators.required, Validators.minLength(10),Validators.pattern(/^\d{1,10}$/)]],
+      password:['',Validators.required]
     });
   }
 
@@ -28,6 +29,7 @@ export class SLoginComponent implements OnInit{
   ngOnInit(): void {
     
   }
+  service=inject(SellerApiService);
 
   onSubmit()
   {
@@ -35,6 +37,7 @@ export class SLoginComponent implements OnInit{
       {
         const seller: sellerlogin = this.sellerloginForm.value; // Create a product object
         console.log('Form Submitted!', seller);
+        this.service.checkseller(seller);
         // Here you can handle the form data, e.g., send it to a server
       } else {
         console.log('Form is invalid');
