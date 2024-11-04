@@ -31,5 +31,31 @@ namespace InventoryManagement.Api.Controllers.Orders
             GetOrderQuery query = new GetOrderQuery();
             return await _mediator.Send(query);
         }
+
+        [HttpGet("name")]
+        public async Task<List<OrderOrderDetailsSellerProductDto>> GetOrderHistoryByName(string name)
+        {
+            GetOrderHistoryByNameQuery query = new GetOrderHistoryByNameQuery();
+            query.getname = name;
+            return await _mediator.Send(query);
+        }
+
+
+        [HttpGet("id")]
+        public async Task<ActionResult<List<OrderOrderDetailsSellerProductDto>>> GetAllOrderHistory(int id)
+        {
+            var query = new GetAllOrderHistoryQuery();
+            query.getid = id;
+            var result = await _mediator.Send(query);
+
+            if (result == null || result.Count == 0)
+            {
+                return NotFound("No order history found.");
+            }
+
+            return Ok(result);
+        }
+
+
     }
 }
