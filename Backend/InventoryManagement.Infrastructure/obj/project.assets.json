@@ -2103,11 +2103,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
       "projectName": "InventoryManagement.Infrastructure",
-      "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
+      "projectPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\",
-      "outputPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Infrastructure\\obj\\",
+      "outputPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abhishek.sadasivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2118,14 +2118,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
-              "projectPath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
+            "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+              "projectPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
             }
           }
         }
@@ -2134,6 +2135,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2175,7 +2181,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

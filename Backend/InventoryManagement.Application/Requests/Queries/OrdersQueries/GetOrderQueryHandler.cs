@@ -1,4 +1,5 @@
 ﻿using InventoryManagement.Application.Requests.DTOs;
+using InventoryManagement.Domain.Entity;
 using InventoryManagement.Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,7 @@ namespace InventoryManagement.Application.Requests.Queries.OrdersQueries
             var re = await Task.Run(() =>
             {
                 List<OrdersDto> result = new List<OrdersDto>();
-                var orders = _context.Orders.Include(x=>x.OrderDetails);
+                var orders = _context.Orders.Include(x => x.OrderDetails).ThenInclude(y=>y.SellerProduct);
                 foreach (var order in orders)
                 {
                     OrdersDto obj = new OrdersDto();
@@ -33,14 +34,16 @@ namespace InventoryManagement.Application.Requests.Queries.OrdersQueries
                     obj.CustomerID = order.CustomerID;
                     obj.TotalPrice = order.TotalPrice;
                     var OrderDetails = order.OrderDetails;
-                    List<OrderDetailsDto>OorderDetailsList = new List<OrderDetailsDto>();
+                    List<OrderDetailsDto> OorderDetailsList = new List<OrderDetailsDto>();
                     foreach (var item in OrderDetails)
                     {
                         OrderDetailsDto Orderdto = new OrderDetailsDto();
                         Orderdto.SellerProductID = item.SellerProductID;
                         Orderdto.Quantity = item.Quantity;
-                        Orderdto.SubTotalPrice=item.SubTotalPrice;
+                        Orderdto.SubTotalPrice = item.SubTotalPrice;    
+                        Orderdto.ProductName=item.SellerProduct.ProductName;
                         OorderDetailsList.Add(Orderdto);
+
                     }
                     obj.OrderDetails = OorderDetailsList;
                     result.Add(obj);

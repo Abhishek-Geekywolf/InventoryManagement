@@ -1,4 +1,6 @@
 ﻿using InventoryManagement.Application.Requests.Commands.CustomerCommands;
+using InventoryManagement.Application.Requests.DTOs;
+using InventoryManagement.Application.Requests.Queries.CustomerQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,41 +19,19 @@ namespace InventoryManagement.Api.Controllers.Customers
             _mediator = mediator;
         }
 
-        // GET: api/<CustomerController>
-        //[HttpGet]
-        //public int 
-        
+        [HttpGet]
+        public async Task<List<CustomerDto>>GetCustomer()
+        {
+            GetCustomerQuery query = new GetCustomerQuery();
+            return await _mediator.Send(query);
+        }
 
-        //// GET api/<CustomerController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        // POST api/<CustomerController>
         [HttpPost]
         public async Task<int>AddCustomer([FromBody]AddCustomerCommand command )
         {
             return await _mediator.Send(command);
         }
 
-        //[HttpPost]
-        //public async Task<int> AddAccount(AddAccountCommand command)
-        //{
-        //    return await _mediator.Send(command);
-        //}
-
-        //// PUT api/<CustomerController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/<CustomerController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+    
     }
 }
