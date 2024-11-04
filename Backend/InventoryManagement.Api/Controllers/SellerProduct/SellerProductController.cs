@@ -1,5 +1,6 @@
 ﻿using InventoryManagement.Application.Requests.Commands.SellerCommands;
 using InventoryManagement.Application.Requests.Commands.SellerProductCommands;
+using InventoryManagement.Application.Requests.DTOs;
 using InventoryManagement.Application.Requests.Queries.SellerProductsQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -17,13 +18,13 @@ namespace InventoryManagement.Api.Controllers.SellerProduct
         {
             _mediator = mediator;
         }
-        //[HttpGet("id")]
-        //public async Task<int> GetSellerProductById(int id)
-        //{
-        //    GetSellerProductByIDQuery query = new GetSellerProductByIDQuery();
-        //    query.getid = id;
-        //    return await _mediator.Send(query);
-        //}
+        [HttpGet("id")]
+        public async Task<List<SellerProductDto>> GetSellerProductById(int id)
+        {
+            GetSellerProductByIDQuery query = new GetSellerProductByIDQuery();
+            query.getid = id;
+            return await _mediator.Send(query);
+        }
         [HttpPost]
         public async Task<int> AddSellerProduct(AddSellerProductCommand command)
         {

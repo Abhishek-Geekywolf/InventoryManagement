@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UVkX3Mumm7K8HQMP0HyhpvvP+D/8j27nFzgypRWRhCM2RrrWOMPXZCvGT9dsKg84PysSwYmVVqDD6oRUDtM7SQ==",
+  "dgSpecHash": "cyW6j31STM4=",
   "success": true,
-  "projectFilePath": "C:\\Assignments\\InventoryManagement\\InventoryManagement.Api\\InventoryManagement.Api.csproj",
+  "projectFilePath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Api\\InventoryManagement.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",

@@ -11,6 +11,7 @@ namespace InventoryManagement.Application.Requests.DTOs
     public class OrderDetailsDto
     {
         public int SellerProductID { get; set; }
+        public string ProductName {  get; set; }
         public int Quantity { get; set; }
         public double? SubTotalPrice { get; set; }
     }
