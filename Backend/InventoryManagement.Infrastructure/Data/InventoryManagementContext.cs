@@ -21,6 +21,18 @@ namespace InventoryManagement.Infrastructure.Data
 
         public DbSet<Customers> Customers { get; set; } 
         public DbSet<Orders> Orders { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Sellers>()
+                .HasIndex(s => s.Email)
+                .IsUnique();
+            modelBuilder.Entity<Customers>()
+               .HasIndex(s => s.Email)
+               .IsUnique();
+
+            base.OnModelCreating(modelBuilder);
+        }
+
 
     }
 }
