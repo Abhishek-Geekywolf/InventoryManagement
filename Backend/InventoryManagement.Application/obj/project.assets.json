@@ -4144,19 +4144,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\": {}
+    "C:\\Users\\athullya.r\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+      "projectUniqueName": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
       "projectName": "InventoryManagement.Application",
-      "projectPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
-      "packagesPath": "C:\\Users\\abhishek.sadasivan\\.nuget\\packages\\",
-      "outputPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Application\\obj\\",
+      "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+      "packagesPath": "C:\\Users\\athullya.r\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\abhishek.sadasivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\athullya.r\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4171,8 +4171,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
-              "projectPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj"
+            "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Infrastructure\\InventoryManagement.Infrastructure.csproj"
             }
           }
         }
@@ -4227,7 +4227,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

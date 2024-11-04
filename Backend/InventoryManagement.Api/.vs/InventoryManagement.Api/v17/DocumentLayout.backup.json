@@ -1,7 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Assignments\\InventoryManagement\\Backend\\InventoryManagement.Api\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.api\\controllers\\orders\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|solutionrelative:controllers\\orders\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.api\\controllers\\sellerproduct\\sellerproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D1BCA43-C42D-4812-A722-2F3D0385741A}|InventoryManagement.Api.csproj|solutionrelative:controllers\\sellerproduct\\sellerproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\ordersqueries\\getallorderhistoryqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\ordersqueries\\getallorderhistoryquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\ordersqueries\\getorderhistorybynamequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\ordersqueries\\getorderhistorybynamequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\sellerproductsqueries\\getsellerproductbynamequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\queries\\sellerproductsqueries\\getsellerproductbynamequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F236783D-75E7-4FD1-90A4-41D721047FE1}|..\\InventoryManagement.Application\\InventoryManagement.Application.csproj|c:\\users\\athullya.r\\source\\personal\\newinv\\inventorymanagement\\backend\\inventorymanagement.application\\requests\\dtos\\orderorderdetailssellerproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +43,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 14,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -18,6 +80,136 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\Orders\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Orders\\OrderController.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\Orders\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\Orders\\OrderController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:39:05.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SellerProductController.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\SellerProduct\\SellerProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SellerProduct\\SellerProductController.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Api\\Controllers\\SellerProduct\\SellerProductController.cs",
+              "RelativeToolTip": "Controllers\\SellerProduct\\SellerProductController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:35:53.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetAllOrderHistoryQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQueryHandler.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQueryHandler.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQueryHandler.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:34:54.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetAllOrderHistoryQuery.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQuery.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQuery.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQuery.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetAllOrderHistoryQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:34:26.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetOrderHistoryByNameQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQueryHandler.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQueryHandler.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:33:40.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:27:55.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetOrderHistoryByNameQuery.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQuery.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQuery.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQuery.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\OrdersQueries\\GetOrderHistoryByNameQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:33:10.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetSellerProductByNameQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQueryHandler.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQueryHandler.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQueryHandler.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:31:56.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetSellerProductByNameQuery.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQuery.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQuery.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQuery.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\Queries\\SellerProductsQueries\\GetSellerProductByNameQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:31:15.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderOrderDetailsSellerProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\DTOs\\OrderOrderDetailsSellerProductDto.cs",
+              "RelativeDocumentMoniker": "..\\InventoryManagement.Application\\Requests\\DTOs\\OrderOrderDetailsSellerProductDto.cs",
+              "ToolTip": "C:\\Users\\athullya.r\\source\\Personal\\NewInv\\InventoryManagement\\Backend\\InventoryManagement.Application\\Requests\\DTOs\\OrderOrderDetailsSellerProductDto.cs",
+              "RelativeToolTip": "..\\InventoryManagement.Application\\Requests\\DTOs\\OrderOrderDetailsSellerProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:29:59.657Z",
+              "EditorCaption": ""
             }
           ]
         }
