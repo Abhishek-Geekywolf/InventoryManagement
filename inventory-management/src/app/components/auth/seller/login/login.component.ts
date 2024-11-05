@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { sellerlogin } from '../../../../models/sellerlogin';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SellerApiService } from '../../../../service/sellerapi.service';
 
@@ -30,19 +30,38 @@ export class SLoginComponent implements OnInit{
     
   }
   service=inject(SellerApiService);
+  public router = inject(Router); 
+
 
   onSubmit()
   {
-    if(this.sellerloginForm.valid)
-      {
-        const seller: sellerlogin = this.sellerloginForm.value; // Create a product object
+    if(!this.sellerloginForm.valid)
+    {
+      console.log('Form is invalid');
+      return
+    }
+    
+        const seller: sellerlogin = this.sellerloginForm.value; 
         console.log('Form Submitted!', seller);
-        this.service.checkseller(seller);
-        // Here you can handle the form data, e.g., send it to a server
-      } else {
-        console.log('Form is invalid');
+        const response=this.service.checkseller(seller);
+        response.subscribe(
+          {
+            next:(response:any)=>
+            {
+              if(response!=0){
+                alert(response)
+                this.service.setsellerid(response)
+                this.router.navigate(['/dash']);
+              }
+              else{
+                alert("sellernotfound")
+      
+              }
+      
+            }
+          })
+      
       }
 
   }
 
-}

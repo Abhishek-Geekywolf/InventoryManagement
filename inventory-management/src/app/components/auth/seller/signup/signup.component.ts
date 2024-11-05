@@ -34,10 +34,9 @@ service=inject(SellerApiService);
   {
     if(this.sellerloginForm.valid)
       {
-        const seller: sellerlogin = this.sellerloginForm.value; // Create a product object
+        const seller: sellerlogin = this.sellerloginForm.value; 
         console.log('Form Submitted!', seller);
         this.service.addSeller(seller);
-        // Here you can handle the form data, e.g., send it to a server
       } else {
         console.log('Form is invalid');
       }

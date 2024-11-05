@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SellerApiService } from '../../../service/sellerapi.service';
 
 @Component({
   selector: 'app-cardview',
@@ -10,25 +11,32 @@ import { Component } from '@angular/core';
 })
 export class CardviewComponent {
 
-  products = [
-    { id: 1, name: 'Product 1', price: 19.99 },
-    { id: 2, name: 'Product 2', price: 29.99 },
-    { id: 3, name: 'Product 3', price: 39.99 },
-    { id: 4, name: 'Product 4', price: 49.99 },
-    { id: 5, name: 'Product 5', price: 59.99 },
-    { id: 1, name: 'Product 1', price: 19.99 },
-    { id: 2, name: 'Product 2', price: 29.99 },
-    { id: 3, name: 'Product 3', price: 39.99 },
-    { id: 4, name: 'Product 4', price: 49.99 },
-    { id: 5, name: 'Product 5', price: 59.99 },
-    { id: 1, name: 'Product 1', price: 19.99 },
-    { id: 2, name: 'Product 2', price: 29.99 },
-    { id: 3, name: 'Product 3', price: 39.99 },
-    { id: 4, name: 'Product 4', price: 49.99 },
-    { id: 5, name: 'Product 5', price: 59.99 },
-  ];
-  // openUpdateDeleteModal() {
-  //   ('#UpdateDelete').modal('show');
+ 
+  service = inject(SellerApiService);
+  products: any[] = [];
 
+  ngOnInit() {
+    this.loadProducts(); 
+  }
 
+  loadProducts() {
+    const sellerid = this.service.sellerid; 
+    this.service.sellerproduct(sellerid).subscribe({
+      next: (response: any) => {
+        if (response && response.length > 0) {
+          this.products = response; // Store the response in the products array
+        } else {
+          alert("No products found");
+        }
+      },
+      error: (error) => {
+        console.error("Error fetching products:", error);
+        alert("An error occurred while fetching products");
+      }
+    });
+  }
 }
+
+
+
+
