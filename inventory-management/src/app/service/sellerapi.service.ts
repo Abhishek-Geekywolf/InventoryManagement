@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment.development';
 import { sellerlogin } from '../models/sellerlogin';
 import { Router } from '@angular/router';
 import { customerlogin } from '../models/customerlogin';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +17,18 @@ export class SellerApiService {
 
 
   http=inject(HttpClient)
+  toaster=inject(ToastrService);
+
   addSeller(seller:sellerlogin)
   {
     this.http.post('https://localhost:7115/api/Seller',seller).subscribe(
     {
       next:(response:any)=>
       {
-        alert("selleradded")
+        //alert("selleradded")
+        this.toaster.success("seller added","success");
+        this.router.navigate(['/seller/login']);
+
       }
     }
   )}
