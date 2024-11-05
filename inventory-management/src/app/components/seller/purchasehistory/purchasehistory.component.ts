@@ -18,11 +18,12 @@ export class PurchasehistoryComponent implements OnInit{
   products: Product[] = [];
   orders: Order[] = [];
   selectedProductName: string = ''; 
+  selectedSellerId: number = 1;
   
 
   constructor(private purchaseservice:PurchasehistoryService){}
   
-  ngOnInit(): void {
+  ngOnInit(){
     this.products = this.purchaseservice.getProducts();
     this.loadOrders(); // Load all orders by default
   }
@@ -38,11 +39,21 @@ export class PurchasehistoryComponent implements OnInit{
 }
 
 
-  loadOrders(): void {
+  loadOrders() {
     if (!this.selectedProductName) {
-      this.orders = this.purchaseservice.getAllOrders(); // Show all orders
+      this.purchaseservice.getAllOrders(this.selectedSellerId).subscribe(
+        {
+          next: (orders: any) => {
+            this.orders = orders; // Store fetched orders
+          },
+          error: (error) => {
+            console.error('Error fetching orders', error);
+            this.orders = []; // Clear orders on error
+          }
+        }
+      )
     } else {
-      this.orders = this.purchaseservice.getOrdersByProductName(this.selectedProductName);
+      this.purchaseservice.getOrdersByProductName(this.selectedProductName);
     }
   }
 

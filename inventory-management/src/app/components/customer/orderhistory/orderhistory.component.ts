@@ -18,6 +18,7 @@ export class OrderhistoryComponent {
   products: Product[] = [];
   orders: Order[] = [];
   selectedProductName: string = ''; 
+  selectedSellerId:number=1;
   
 
   constructor(private purchaseservice:PurchasehistoryService){}
@@ -37,9 +38,9 @@ export class OrderhistoryComponent {
 
   loadOrders(): void {
     if (!this.selectedProductName) {
-      this.orders = this.purchaseservice.getAllOrders(); // Show all orders
+      this.purchaseservice.getAllOrders(this.selectedSellerId); // Show all orders
     } else {
-      this.orders = this.purchaseservice.getOrdersByProductName(this.selectedProductName);
+      this.purchaseservice.getOrdersByProductName(this.selectedProductName);
     }
   }
 
