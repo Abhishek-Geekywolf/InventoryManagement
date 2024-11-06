@@ -23,7 +23,9 @@ export class CartComponent {
   selectedProductName: string = ''; 
   selectedSellerId: number=1;
 
+
   constructor(){}
+
   
   @Input() productlist: any[] = []; 
   service=inject(SellerApiService);
@@ -36,6 +38,7 @@ export class CartComponent {
   }
 
  
+
 
 //   onProductChange(event: any): void {
 //     this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
@@ -70,6 +73,7 @@ export class CartComponent {
 //         quantity: new FormControl(30),
 //     },
 // ];
+
 
 
 
