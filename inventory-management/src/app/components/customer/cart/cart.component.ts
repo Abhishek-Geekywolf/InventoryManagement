@@ -6,6 +6,7 @@ import { Product } from '../../../models/products';
 import { Order } from '../../../models/order';
 import { CustomernavComponent } from "../customershared/customernav/customernav.component";
 import { SellerApiService } from '../../../service/sellerapi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -47,13 +48,11 @@ export class CartComponent {
     this.productToDelete = product;
   }
 
-  // Delete product from cart
   deleteProduct(): void {
     if (this.productToDelete) {
-      // Find index of product in the cart and remove it
       const index = this.productlist.findIndex((item: { id: any; }) => item.id === this.productToDelete.id);
       if (index !== -1) {
-        this.productlist.splice(index, 1); // Remove the product from the cart array
+        this.productlist.splice(index, 1); 
       }
 
       // Recalculate the total price after deletion
@@ -74,7 +73,7 @@ export class CartComponent {
     }
   }
 
-
+  router=inject(Router)
 
 
   buyNow() {
@@ -88,8 +87,7 @@ export class CartComponent {
         quantity: product.quantity,
         subTotalPrice: product.price 
         })),
-        // Current date for the order
-    };
+      };
   
     console.log(orderRequest);
     this.service.createOrder(orderRequest).subscribe(
@@ -106,6 +104,7 @@ export class CartComponent {
       }
       
     );
+    this.router.navigate(['/customer-dash']); 
   }
   
 }
