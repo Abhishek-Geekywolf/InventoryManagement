@@ -21,13 +21,36 @@ namespace InventoryManagement.Application.Requests.Commands.OrderDetailsCommands
 
         public async Task<int> Handle(AddOrderDetailsCommand request, CancellationToken cancellationToken)
         {
-            OrderDetails orderdetails=new OrderDetails();
-            orderdetails.OrderID = request.OrderId;
-            orderdetails.SellerProductID = request.SellerProductId;
-            orderdetails.Quantity = request.Quantity;
-            _context.OrderDetails.Add(orderdetails);
-            PriceQuantityUpdate obj = new PriceQuantityUpdate(_context);
-            obj.Update(orderdetails,request.SellerProductId,request.OrderId);
+            //OrderDetails orderdetails=new OrderDetails();
+            Orders orders = new Orders();
+            orders.OrderDate = request.OrderDate;
+            orders.CustomerID = request.CustomerId;
+            orders.TotalPrice = request.OrderItems.Sum(item => item.SubTotalPrice);
+            _context.Orders.Add(orders);
+             await _context.SaveChangesAsync();
+
+            foreach (var item in request.OrderItems)
+            {
+                var orderDetails = new OrderDetails
+                {
+                    OrderID = orders.Id,
+                    SellerProductID = item.SellerProductID,
+                    Quantity = item.Quantity,
+                    SubTotalPrice = item.SubTotalPrice
+                };
+                _context.OrderDetails.Add(orderDetails);
+
+                PriceQuantityUpdate obj = new PriceQuantityUpdate(_context);
+                obj.Update(orderDetails, item.SellerProductID);
+
+            }
+
+            //orderdetails.SellerProductID = request.SellerProductId;
+            //orderdetails.Quantity = request.Quantity;
+            //orderdetails.OrderID = orders.Id;
+            //_context.OrderDetails.Add(orderDetails);
+            //PriceQuantityUpdate obj = new PriceQuantityUpdate(_context);
+            //obj.Update(orderDetails, item.SellerProductId);
             return await _context.SaveChangesAsync();
 
 
