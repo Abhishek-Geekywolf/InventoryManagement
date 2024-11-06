@@ -15,7 +15,15 @@ import { CardviewComponent } from "../../shared/cardview/cardview.component";
 })
 export class SellerdashboardComponent {
 
-  
+  searchQuery: string = '';  // Initialize searchQuery
+  selectedFilter: string = 'all'; 
 
+  onSearchChanged(query: string): void {
+    this.searchQuery = query;  // Update the searchQuery when search is changed
+  }
+
+  onFilterChanged(filter: string):void {
+    this.selectedFilter = filter;
+  }
  
 }

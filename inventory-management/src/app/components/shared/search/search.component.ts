@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SellerApiService } from '../../../service/sellerapi.service';
+import { idText } from 'typescript';
 
 @Component({
   selector: 'app-search',
@@ -15,19 +16,27 @@ import { SellerApiService } from '../../../service/sellerapi.service';
 
 export class SearchComponent {
 service=inject(SellerApiService);
-  searchProduct:string='';
-
-  @Output() searchname=new EventEmitter<string>();
   
+  @Output() searchChanged = new EventEmitter<string>();
+  @Output() filterChanged = new EventEmitter<string>(); 
   
   options = [
     { id: 'all', name: 'All Products' },
     { id: 'available', name: 'Available Only' },
-    { id: 'out-of-stock', name: 'Out of Stock' }
+    { id: 'out-of-stock', name: 'Out of Stock' },
+    { id: 'low-stock', name: 'Low Stock' },
   ];
 
-search(name:string):void{
-this.searchname.emit(name);
-}
+  searchQuery: string = ''; 
+  selectedFilter: string = 'all';
+  onSearch() {
+    this.searchChanged.emit(this.searchQuery); // Emit the search query to the parent
+  }
+
+
+  onFilterChange() {
+    this.filterChanged.emit(this.selectedFilter);  // Emit the selected filter to the parent component
+  }
+
 
 }

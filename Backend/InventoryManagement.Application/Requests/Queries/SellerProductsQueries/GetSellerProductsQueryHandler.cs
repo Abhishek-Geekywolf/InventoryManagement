@@ -28,7 +28,7 @@ namespace InventoryManagement.Application.Requests.Queries.SellerProductsQueries
                 {
                     SellerProductDto sellerobj = new SellerProductDto();
                   //  sellerobj.Id = seller.Id;
-                    sellerobj.Id = seller.Id;
+                    sellerobj.SellerProductId = seller.Id;
                     sellerobj.SellerId = seller.SellerID;
                     sellerobj.ProductName = seller.ProductName;
                     sellerobj.AvailableQuantity = seller.TotalQuantity - seller.OrderedQuantity;

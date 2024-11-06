@@ -103,8 +103,10 @@ customerproduct()
 
 public cart: any[] = [];
 public subprice:number=0;
+public totalPrice:number=0;
 
 addToCart(product: any, quantity: number): void {
+
   const existingProduct = this.cart.find(item => item.id === product.sellerProductId);
   console.log('p',product.availableQuantity);
   console.log(quantity);
@@ -116,6 +118,7 @@ addToCart(product: any, quantity: number): void {
     else{
       existingProduct.quantity += quantity;
       this.toaster.success("product added to cart","success");
+      existingProduct.price = existingProduct.quantity * product.price;
     }
   } 
   else {
@@ -136,10 +139,21 @@ addToCart(product: any, quantity: number): void {
 
           }
   }
+
+  this.totalPrice = this.cart.reduce((acc, item) => acc + item.price, 0);
+  console.log('Total price:', this.totalPrice);
+
+
+  // Debugging the cart after the update
+  console.log('Cart after update:', this.cart);
 }
 
 getCart(): any[] {
   return this.cart;
+}
+
+getTotalPrice(): number {
+  return this.totalPrice;
 }
 
 
@@ -149,6 +163,12 @@ updateProduct(sellerid:number,productData:any){
 }
 getCustomerOrderHistory(){
   return this.http.get(`https://localhost:7115/api/Order/CustId?id=1`);
+}
+
+
+createOrder(orderRequest:any)
+{
+  return this.http.post("https://localhost:7115/api/OrderDetails",orderRequest)
 }
 
 }

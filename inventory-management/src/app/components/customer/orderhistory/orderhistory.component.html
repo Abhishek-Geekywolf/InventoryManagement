@@ -1,4 +1,5 @@
 <app-customernav></app-customernav>
+
 <mat-card style="min-height: 500px; margin-top: 100px;">
     <mat-card-header>
       <h1>Your Order History</h1>
@@ -44,6 +45,7 @@
   
               <tr mat-header-row *matHeaderRowDef="innerToDisplay"></tr>
               <tr mat-row *matRowDef="let row; columns: innerToDisplay"></tr>
+
             </table>
           </td>
         </ng-container>
