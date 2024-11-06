@@ -4,6 +4,10 @@ import { environment } from '../../environments/environment.development';
 import { sellerlogin } from '../models/sellerlogin';
 import { Router } from '@angular/router';
 import { customerlogin } from '../models/customerlogin';
+import { BehaviorSubject } from 'rxjs';
+import { Product } from '../models/products';
+import { updateProduct } from '../models/updateproduct';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +17,10 @@ export class SellerApiService {
   url:string='https://localhost:7115/api/Seller';
   public router = inject(Router); 
   public sellerid:number=0;
+  public name: string = '';
+  
+  private searchSubject = new BehaviorSubject<string>(''); 
+  public search$ = this.searchSubject.asObservable();
 
 
   http=inject(HttpClient)
@@ -33,6 +41,7 @@ checkseller(seller:sellerlogin){
 {
   this.sellerid=id;
 } 
+
 
 
 AddCustomer(customer:customerlogin){
@@ -68,11 +77,17 @@ checkcustomer(customer:customerlogin){
   })
 }
 sellerproduct(sellerid:number){
- return this.http.get(`https://localhost:7115/api/SellerProduct/id?id=${sellerid}`)
+ return this.http.get(`https://localhost:7115/api/SellerProduct/id?id=1`)
 
+}
+orderdetails(sellerid:number){
+  return this.http.get(`https://localhost:7115/api/Order/id?id=${sellerid}`)
 }
 
 
+updateProduct(sellerid:number,productData:any){
+  return this.http.put(`https://localhost:7115/api/SellerProduct/name?id=${sellerid}`,productData)
 
+}
 
 }

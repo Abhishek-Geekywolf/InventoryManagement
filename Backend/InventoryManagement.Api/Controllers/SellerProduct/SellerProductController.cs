@@ -2,6 +2,7 @@
 using InventoryManagement.Application.Requests.Commands.SellerProductCommands;
 using InventoryManagement.Application.Requests.DTOs;
 using InventoryManagement.Application.Requests.Queries.SellerProductsQueries;
+using InventoryManagement.Application.Requests.Update;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,6 +38,14 @@ namespace InventoryManagement.Api.Controllers.SellerProduct
         {
             GetSellerProductByNameQuery query = new GetSellerProductByNameQuery();
             query.getname = name;
+            return await _mediator.Send(query);
+        }
+        [HttpPut("name")]
+        public async Task<List<SellerProductDto>>UpdateSellerProduct(int id,updateproductdto obj)
+        {
+            UpdateSellerProductQuery query = new UpdateSellerProductQuery();
+            query.SellerProductId = id;
+            query.update=obj;
             return await _mediator.Send(query);
         }
 

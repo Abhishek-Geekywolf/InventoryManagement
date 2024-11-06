@@ -4,7 +4,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { SearchComponent } from '../customershared/search/search.component';
 import { Product } from '../../../models/products';
 import { Order } from '../../../models/order';
-import { PurchasehistoryService } from '../../../service/purchasehistory.service';
 import { CustomernavComponent } from "../customershared/customernav/customernav.component";
 import { ProductList } from '../../../models/customercartlist';
 import { FormControl } from '@angular/forms';
@@ -20,10 +19,9 @@ export class CartComponent {
   products: Product[] = [];
   orders: Order[] = [];
   selectedProductName: string = ''; 
-  constructor(private purchaseservice:PurchasehistoryService){}
   
   ngOnInit(): void {
-    this.products = this.purchaseservice.getProducts();
+    // this.products = this.purchaseservice.getProducts();
     this.loadOrders(); // Load all orders by default
   }
 
@@ -37,9 +35,9 @@ export class CartComponent {
 
   loadOrders(): void {
     if (!this.selectedProductName) {
-      this.orders = this.purchaseservice.getAllOrders(); // Show all orders
+      // this.orders = this.purchaseservice.getAllOrders(); // Show all orders
     } else {
-      this.orders = this.purchaseservice.getOrdersByProductName(this.selectedProductName);
+      // this.orders = this.purchaseservice.getOrdersByProductName(this.selectedProductName);
     }
   }
 

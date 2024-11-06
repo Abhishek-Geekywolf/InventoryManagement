@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SellerApiService } from '../../../../service/sellerapi.service';
 
 @Component({
-  selector: 'app-signup',
+  selector: 'app-ssignup',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './signup.component.html',

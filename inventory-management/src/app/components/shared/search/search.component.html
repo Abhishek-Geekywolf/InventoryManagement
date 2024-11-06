@@ -1,7 +1,7 @@
-<div class="d-flex justify-content-center fixed-top bg-light " style="top: 56px;"> <!-- Adjusted for navbar height -->
+<div class="d-flex justify-content-center fixed-top bg-light " style="top: 56px;">
     <form class="d-flex">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success ml-2" type="submit">Search</button>
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-outline-success ml-2" type="submit" (click)="search(searchProduct)">Search</button>
     </form>
     <div class="d-flex align-items-center">
         <button type="button" class="btn btn-primary ml-5" routerLink="/add-product">Add New Product</button>

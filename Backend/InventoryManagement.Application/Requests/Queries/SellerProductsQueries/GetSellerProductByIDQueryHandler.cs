@@ -24,10 +24,11 @@ namespace InventoryManagement.Application.Requests.Queries.SellerProductsQueries
             List<SellerProductDto> result = new List<SellerProductDto>();
             var re = await Task.Run(() =>
             {
-                var Sellers = _context.SellerProducts.Where(x => x.Id.Equals(request.getid));
+                var Sellers = _context.SellerProducts.Where(x => x.SellerID.Equals(request.getid));
                 foreach (var seller in Sellers)
                 {
                     SellerProductDto sellerobj = new SellerProductDto();
+                    sellerobj.SellerProductId = seller.Id;
                     sellerobj.SellerId = request.getid;
                     sellerobj.ProductName = seller.ProductName;
                     sellerobj.AvailableQuantity = seller.TotalQuantity - seller.OrderedQuantity;

@@ -11,7 +11,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 builder.Services.AddDbContext<InventoryManagementContext>(x =>
 {
     x.UseSqlServer(@"Server=localhost,1430;Database=InventoryManagement;User Id=sa;Password=abhi@123;TrustServerCertificate=true");
@@ -32,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors(options=>options.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
 
 app.UseHttpsRedirection();
 

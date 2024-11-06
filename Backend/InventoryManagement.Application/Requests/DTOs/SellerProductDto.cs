@@ -10,6 +10,7 @@ namespace InventoryManagement.Application.Requests.DTOs
 {
     public class SellerProductDto
     {
+        public int SellerProductId { get; set; }
         public int SellerId { get; set; }  
         public string ProductName { get; set; }
         public int? AvailableQuantity { get; set; }

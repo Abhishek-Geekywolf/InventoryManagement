@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CustomernavComponent } from '../customershared/customernav/customernav.component';
 import { Product } from '../../../models/products';
 import { Order } from '../../../models/order';
-import { PurchasehistoryService } from '../../../service/purchasehistory.service';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from "../customershared/search/search.component";
@@ -20,10 +19,10 @@ export class OrderhistoryComponent {
   selectedProductName: string = ''; 
   
 
-  constructor(private purchaseservice:PurchasehistoryService){}
+  constructor(){}
   
   ngOnInit(): void {
-    this.products = this.purchaseservice.getProducts();
+    // this.products = this.purchaseservice.getProducts();
     this.loadOrders(); // Load all orders by default
   }
 
@@ -37,9 +36,9 @@ export class OrderhistoryComponent {
 
   loadOrders(): void {
     if (!this.selectedProductName) {
-      this.orders = this.purchaseservice.getAllOrders(); // Show all orders
+      // this.orders = this.purchaseservice.getAllOrders(); // Show all orders
     } else {
-      this.orders = this.purchaseservice.getOrdersByProductName(this.selectedProductName);
+      // this.orders = this.purchaseservice.getOrdersByProductName(this.selectedProductName);
     }
   }
 
