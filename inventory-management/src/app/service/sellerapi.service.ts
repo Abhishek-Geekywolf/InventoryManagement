@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment.development';
 import { sellerlogin } from '../models/sellerlogin';
 import { Router } from '@angular/router';
 import { customerlogin } from '../models/customerlogin';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +17,18 @@ export class SellerApiService {
 
 
   http=inject(HttpClient)
+  toaster=inject(ToastrService);
+
   addSeller(seller:sellerlogin)
   {
     this.http.post('https://localhost:7115/api/Seller',seller).subscribe(
     {
       next:(response:any)=>
       {
-        alert("selleradded")
+        //alert("selleradded")
+        this.toaster.success("seller added","success");
+        this.router.navigate(['/seller/login']);
+
       }
     }
   )}
@@ -40,7 +46,9 @@ AddCustomer(customer:customerlogin){
 
   next:(response:any)=>{
     if(response!=0){
-      alert("customerinserted")
+     // alert("customerinserted")
+     this.toaster.success("customer added","success");
+     this.router.navigate(['/customer/login']);
 
     }
     else{
@@ -61,15 +69,45 @@ checkcustomer(customer:customerlogin){
         }
         else{
           alert("customernotfound")
-
         }
-
       }
   })
 }
+
+
 sellerproduct(sellerid:number){
  return this.http.get(`https://localhost:7115/api/SellerProduct/id?id=${sellerid}`)
 
+}
+
+customerproduct()
+{
+  return this.http.get("https://localhost:7115/api/SellerProduct");
+}
+
+public cart: any[] = [];
+public subprice:number=0;
+
+addToCart(product: any, quantity: number): void {
+  const existingProduct = this.cart.find(item => item.id === product.id);
+  if (existingProduct) {
+    // Update quantity if product already exists in cart
+    existingProduct.quantity += quantity;
+  } else {
+    // Add new product to cart
+    this.subprice=quantity*product.price;
+    const cartProduct = {
+      productName: product.productName,
+      price: this.subprice,
+      quantity: quantity,
+      id: product.id
+    };
+    this.cart.push(cartProduct);
+  }
+}
+
+getCart(): any[] {
+  return this.cart;
 }
 
 

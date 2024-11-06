@@ -14,6 +14,11 @@ import { CSignupComponent } from './components/auth/customer/signup/signup.compo
 
 export const routes: Routes = [
     {
+        path:'',
+        redirectTo:'/roleselection',
+        pathMatch:'full'
+    },
+    {
         path:'roleselection',
         component:RoleselectionComponent
     },

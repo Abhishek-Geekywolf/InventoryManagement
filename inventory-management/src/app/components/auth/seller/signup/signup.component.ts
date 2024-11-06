@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { sellerlogin } from '../../../../models/sellerlogin';
 import { CommonModule } from '@angular/common';
 import { SellerApiService } from '../../../../service/sellerapi.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -25,6 +26,7 @@ export class SSignupComponent implements OnInit {
   }
 
 service=inject(SellerApiService);
+toaster=inject(ToastrService);
 
   ngOnInit(): void {
     
@@ -37,6 +39,7 @@ service=inject(SellerApiService);
         const seller: sellerlogin = this.sellerloginForm.value; 
         console.log('Form Submitted!', seller);
         this.service.addSeller(seller);
+        this.toaster.success("seller added","success");
       } else {
         console.log('Form is invalid');
       }
