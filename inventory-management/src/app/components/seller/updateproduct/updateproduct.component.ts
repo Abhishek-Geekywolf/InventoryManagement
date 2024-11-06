@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { NavComponent } from "../../shared/nav/nav.component";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from '../../../models/products';
 import { CommonModule } from '@angular/common';
@@ -9,7 +9,7 @@ import { SellerApiService } from '../../../service/sellerapi.service';
 @Component({
   selector: 'app-updateproduct',
   standalone: true,
-  imports: [NavComponent,ReactiveFormsModule,CommonModule],
+  imports: [NavComponent,ReactiveFormsModule,CommonModule,RouterLink],
   templateUrl: './updateproduct.component.html',
   styleUrl: './updateproduct.component.scss'
 })
@@ -17,7 +17,7 @@ import { SellerApiService } from '../../../service/sellerapi.service';
 
 export class UpdateproductComponent implements OnInit {
 
-
+  router=inject(Router)
   productForm:FormGroup;
   sellerData:any;
 
@@ -51,6 +51,7 @@ onUpdateProduct() {
       next:(response:any)=>{
         if(response){
           alert('Products Updated Successfully');
+          this.router.navigate(['/dash']); 
         }
 
       },
