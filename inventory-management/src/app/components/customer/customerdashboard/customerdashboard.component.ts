@@ -15,23 +15,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class CustomerdashboardComponent {
 
-  // products = [
-  //   { id: 1, name: 'Product 1', price: 19.99 },
-  //   { id: 2, name: 'Product 2', price: 29.99 },
-  //   { id: 3, name: 'Product 3', price: 39.99 },
-  //   { id: 4, name: 'Product 4', price: 49.99 },
-  //   { id: 5, name: 'Product 5', price: 59.99 },
-  //   { id: 1, name: 'Product 1', price: 19.99 },
-  //   { id: 2, name: 'Product 2', price: 29.99 },
-  //   { id: 3, name: 'Product 3', price: 39.99 },
-  //   { id: 4, name: 'Product 4', price: 49.99 },
-  //   { id: 5, name: 'Product 5', price: 59.99 },
-  //   { id: 1, name: 'Product 1', price: 19.99 },
-  //   { id: 2, name: 'Product 2', price: 29.99 },
-  //   { id: 3, name: 'Product 3', price: 39.99 },
-  //   { id: 4, name: 'Product 4', price: 49.99 },
-  //   { id: 5, name: 'Product 5', price: 59.99 },
-  // ];
 
   service=inject(SellerApiService);
   toaster=inject(ToastrService);
@@ -76,16 +59,11 @@ export class CustomerdashboardComponent {
     });
   }
 
-  // onFilterChange(selectedFilter: object) {
-  //   this.selectedFilter = selectedFilter;  // Update the filter selection
-  //   console.log(this.selectedFilter);
-  //   this.applyFilter();
-  //   console.log("im i working")  // Apply the new filter
-  // }
+
 
   openAddToCartModal(products:any)
   {
-    this.selectedProduct = products;  // Set the selected product
+    this.selectedProduct = products;  
     this.quantity = 1; 
   }
 
@@ -93,8 +71,6 @@ export class CustomerdashboardComponent {
     console.log('Product added to cart:', this.selectedProduct.productName);
     console.log('Quantity:', this.quantity);
     console.log('id:',this.selectedProduct);
-    // You can add your cart logic here (e.g., save to cart array, etc.)
-
     this.service.addToCart(this.selectedProduct, this.quantity);
     
   //   const existingProduct = this.cart.find(item => item.id === this.selectedProduct.id);

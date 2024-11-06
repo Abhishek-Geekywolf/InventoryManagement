@@ -5,6 +5,7 @@ import { Product } from '../../../models/products';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../../service/api.service';
 import { ToastrService } from 'ngx-toastr';
+import { SellerApiService } from '../../../service/sellerapi.service';
 
 @Component({
   selector: 'app-addproduct',
@@ -19,7 +20,6 @@ export class AddproductComponent implements OnInit{
 
   constructor(private fb: FormBuilder) {
     this.productForm = this.fb.group({
-      sellerId:['',Validators.required],
       productName: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
       totalQuantity: ['', [Validators.required, Validators.min(1)]],
@@ -30,19 +30,19 @@ export class AddproductComponent implements OnInit{
   ngOnInit(): void {
     
   }
-
   apiService=inject(ApiService);
+  service=inject(SellerApiService)
   toaster=inject(ToastrService);
-
+  sellerid=this.service.sellerid;
   onSubmit()
   {
     if(this.productForm.valid)
     {
       const product: Product = this.productForm.value; 
-      console.log('Form Submitted!', product);
-      alert('Form Submitted!');
+      product.sellerid=this.sellerid;
+      console.log(this.sellerid);
       this.apiService.addProduct(product);
-      this.toaster.success("task added","success");
+      this.toaster.success("product added","success");
 
     } else {
       console.log('Form is invalid');

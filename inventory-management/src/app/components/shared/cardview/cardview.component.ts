@@ -35,19 +35,12 @@ export class CardviewComponent {
       availableQuantity: product.availableQuantity,
       price: product.price
     };}
-    rout(){
-
-    
+    route(){
     this.router.navigate(['/update-products'], { queryParams: { sellerData: JSON.stringify(this.sellerData) } });
     }
   update(id:number){
   this.sellerproductid=id;
   }
-
-
-
-
-
 
 
   loadProducts() {
