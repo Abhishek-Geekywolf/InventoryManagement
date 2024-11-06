@@ -89,10 +89,13 @@ export class CustomerdashboardComponent {
     this.quantity = 1; 
   }
 
+  //subprice:number=0;
+
   addToCart(): void {
     console.log('Product added to cart:', this.selectedProduct.productName);
     console.log('Quantity:', this.quantity);
     console.log('id:',this.selectedProduct);
+    //this.subprice=this.quantity*this.selectedProduct.price;
     // You can add your cart logic here (e.g., save to cart array, etc.)
 
     this.service.addToCart(this.selectedProduct, this.quantity);

@@ -99,33 +99,60 @@ customerproduct()
 
 public cart: any[] = [];
 public subprice:number=0;
+public totalPrice:number=0;
 
 addToCart(product: any, quantity: number): void {
-  const existingProduct = this.cart.find(item => item.id === product.id);
+  console.log('Product received in API:', product);
+  
+  // Check if the product already exists in the cart
+  const existingProduct = this.cart.find(item => item.id === product.sellerProductId);
   if (existingProduct) {
-    // Update quantity if product already exists in cart
+    // If the product already exists, update the quantity
+    console.log('Product already in cart. Updating quantity:', existingProduct.quantity, '=>', existingProduct.quantity + quantity);
     existingProduct.quantity += quantity;
+    existingProduct.price = existingProduct.quantity * product.price;
+    console.log('Updated product in cart:', existingProduct);
+
+  
   } else {
-    // Add new product to cart
-    this.subprice=quantity*product.price;
+    // If the product is not in the cart, add it as a new product
+    const subPrice = quantity * product.price;  // Calculate the subtotal price for the new quantity
     const cartProduct = {
       productName: product.productName,
-      price: this.subprice,
+      price: subPrice,
       quantity: quantity,
-      id: product.id
+      id: product.sellerProductId
     };
     this.cart.push(cartProduct);
+    console.log('Product added to cart:', cartProduct);
   }
+
+  this.totalPrice = this.cart.reduce((acc, item) => acc + item.price, 0);
+  console.log('Total price:', this.totalPrice);
+
+
+  // Debugging the cart after the update
+  console.log('Cart after update:', this.cart);
 }
 
 getCart(): any[] {
   return this.cart;
 }
 
+getTotalPrice(): number {
+  return this.totalPrice;
+}
+
 
 updateProduct(sellerid:number,productData:any){
   return this.http.put(`https://localhost:7115/api/SellerProduct/name?id=${sellerid}`,productData)
 
+}
+
+
+createOrder(orderRequest:any)
+{
+  return this.http.post("https://localhost:7115/api/OrderDetails",orderRequest)
 }
 
 }

@@ -3,7 +3,7 @@
     <!-- Fixed Navbar -->
    <app-nav></app-nav>
     <!-- Fixed Search Bar -->
-    <app-search></app-search>
+    <app-search (searchChanged)="onSearchChanged($event)" (filterChanged)="onFilterChanged($event)"></app-search>
     <!-- Scrollable Container for Product Cards -->
-    <app-cardview></app-cardview>
+    <app-cardview [searchQuery]="searchQuery" [selectedFilter]="selectedFilter" ></app-cardview>
 </div>
