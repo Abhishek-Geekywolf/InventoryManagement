@@ -39,7 +39,7 @@ toaster=inject(ToastrService);
         const seller: sellerlogin = this.sellerloginForm.value; 
         console.log('Form Submitted!', seller);
         this.service.addSeller(seller);
-        this.toaster.success("seller added","success");
+        // this.toaster.success("seller added","success");
       } else {
         console.log('Form is invalid');
       }

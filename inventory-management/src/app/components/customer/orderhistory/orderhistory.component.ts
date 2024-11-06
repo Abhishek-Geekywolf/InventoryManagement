@@ -1,49 +1,69 @@
-import { Component } from '@angular/core';
-import { CustomernavComponent } from '../customershared/customernav/customernav.component';
-import { Product } from '../../../models/products';
-import { Order } from '../../../models/order';
-import { NgSelectModule } from '@ng-select/ng-select';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { SellerApiService } from '../../../service/sellerapi.service';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';          
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { NavComponent } from "../../shared/nav/nav.component";
 import { SearchComponent } from "../customershared/search/search.component";
+import { CustomernavComponent } from "../customershared/customernav/customernav.component";
 
 @Component({
   selector: 'app-orderhistory',
   standalone: true,
-  imports: [CustomernavComponent, NgSelectModule, CommonModule, SearchComponent],
+  imports: [CommonModule, MatCardModule, MatTableModule, NavComponent, SearchComponent, CustomernavComponent],  
   templateUrl: './orderhistory.component.html',
-  styleUrl: './orderhistory.component.scss'
+  styleUrls: ['./orderhistory.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ]
 })
 export class OrderhistoryComponent {
-  products: Product[] = [];
-  orders: Order[] = [];
+  products: any[] = [];
+  orders: any[] = [];
   selectedProductName: string = ''; 
-  selectedSellerId:number=1;
-  
+  selectedSellerId: number = 1;
+  dataSource: any;
+  columnsToDisplay: string[] = ['orderId', 'orderDate', 'totalPrice', 'innerTable'];
+  innerToDisplay: string[] = ['productName', 'quantity', 'subTotalPrice'];
 
-  constructor(){}
-  
+  constructor(private service: SellerApiService, private cdr: ChangeDetectorRef) {}
+
+
+
   ngOnInit(): void {
-    // this.products = this.purchaseservice.getProducts();
-    // this.loadOrders(); // Load all orders by default
+    this.loadOrders(); 
   }
 
- 
+  loadOrders() {
+    this.service.getCustomerOrderHistory().subscribe({
+      next: (response: any) => {
+        if (response && response.length > 0) {
+          this.orders = response; 
+          console.log(this.orders);
+          this.dataSource = new MatTableDataSource(this.orders);
+        } else {
+          alert('No orders found');
+        }
+      },
+      error: (error) => {
+        console.error('Error fetching orders:', error);
+        alert('An error occurred while fetching orders');
+      }
+    });
+  }
 
-//   onProductChange(event: any): void {
-//     this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
-//     this.loadOrders();
-// }
+  toggle(order: any) {
+    order.showDetails = !order.showDetails;
+    console.log(order.showDetails)
+    console.log('order details',order.orderDetails)
+    this.cdr.detectChanges();
+    console.log('Change detection triggered');
 
 
-//   loadOrders(): void {
-//     if (!this.selectedProductName) {
-//       this.purchaseservice.getAllOrders(this.selectedSellerId); // Show all orders
-//     } else {
-//       this.purchaseservice.getOrdersByProductName(this.selectedProductName);
-//     }
-//   }
-
+  }
 }
-
-
-
