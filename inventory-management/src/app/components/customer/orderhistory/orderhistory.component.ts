@@ -17,30 +17,31 @@ export class OrderhistoryComponent {
   products: Product[] = [];
   orders: Order[] = [];
   selectedProductName: string = ''; 
+  selectedSellerId:number=1;
   
 
   constructor(){}
   
   ngOnInit(): void {
     // this.products = this.purchaseservice.getProducts();
-    this.loadOrders(); // Load all orders by default
+    // this.loadOrders(); // Load all orders by default
   }
 
  
 
-  onProductChange(event: any): void {
-    this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
-    this.loadOrders();
-}
+//   onProductChange(event: any): void {
+//     this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
+//     this.loadOrders();
+// }
 
 
-  loadOrders(): void {
-    if (!this.selectedProductName) {
-      // this.orders = this.purchaseservice.getAllOrders(); // Show all orders
-    } else {
-      // this.orders = this.purchaseservice.getOrdersByProductName(this.selectedProductName);
-    }
-  }
+//   loadOrders(): void {
+//     if (!this.selectedProductName) {
+//       this.purchaseservice.getAllOrders(this.selectedSellerId); // Show all orders
+//     } else {
+//       this.purchaseservice.getOrdersByProductName(this.selectedProductName);
+//     }
+//   }
 
 }
 

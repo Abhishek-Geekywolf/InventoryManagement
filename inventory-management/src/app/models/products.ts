@@ -11,5 +11,9 @@ export interface Product {
     price: FormControl<number|null>;
     newPrice: FormControl<number|null>;
     addQuantity: FormControl<number|null>;
-}
+
+    id:FormControl<number|null>;
+   
+  }
+
   

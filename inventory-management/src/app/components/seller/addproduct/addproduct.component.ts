@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Product } from '../../../models/products';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../../service/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addproduct',
@@ -31,6 +32,7 @@ export class AddproductComponent implements OnInit{
   }
 
   apiService=inject(ApiService);
+  toaster=inject(ToastrService);
 
   onSubmit()
   {
@@ -40,6 +42,7 @@ export class AddproductComponent implements OnInit{
       console.log('Form Submitted!', product);
       alert('Form Submitted!');
       this.apiService.addProduct(product);
+      this.toaster.success("task added","success");
 
     } else {
       console.log('Form is invalid');

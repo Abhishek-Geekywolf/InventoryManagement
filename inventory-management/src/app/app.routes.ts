@@ -15,6 +15,11 @@ import { UpdateproductComponent } from './components/seller/updateproduct/update
 
 export const routes: Routes = [
     {
+        path:'',
+        redirectTo:'/roleselection',
+        pathMatch:'full'
+    },
+    {
         path:'roleselection',
         component:RoleselectionComponent
     },

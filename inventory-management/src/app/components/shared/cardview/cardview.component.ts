@@ -20,8 +20,10 @@ export class CardviewComponent {
   products: Product[]=[];
   sellerData: any; 
   sellerproductid:number=0;
-
-
+  paginatedProducts: any[] = [];  
+  currentPage: number = 1;
+  productsPerPage: number = 6;
+  totalProducts: number = 0;
 
   ngOnInit() {
     this.loadProducts(); 
@@ -54,6 +56,8 @@ export class CardviewComponent {
       next: (response: any) => {
         if (response && response.length > 0) {
           this.products = response; 
+          this.totalProducts=response.length;
+          this.updatePaginatedProducts();
         } else {
           alert("No products found");
         }
@@ -64,6 +68,42 @@ export class CardviewComponent {
       }
     });
   }
+
+  updatePaginatedProducts()
+  {
+    const startIndex=(this.currentPage-1)*this.productsPerPage;
+    const endIndex=startIndex+this.productsPerPage;
+    this.paginatedProducts=this.products.slice(startIndex,endIndex);
+  }
+
+  nextPage(event: Event): void {
+    event.preventDefault();
+    if (this.currentPage * this.productsPerPage < this.totalProducts) {
+      this.currentPage++;
+      this.updatePaginatedProducts();
+    }
+  }
+
+  prevPage(event: Event): void {
+    event.preventDefault();
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePaginatedProducts();
+    }
+  }
+
+  goToPage(event: Event,page: number): void {
+    event.preventDefault();
+    if (page > 0 && page <= Math.ceil(this.totalProducts / this.productsPerPage)) {
+      this.currentPage = page;
+      this.updatePaginatedProducts();
+    }
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.totalProducts / this.productsPerPage);
+  }
+
 }
 
 

@@ -19,9 +19,9 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let product of productlist">
-                        <td>{{ product.productName.value }}</td>
-                        <td>{{ product.quantity.value }}</td>
-                        <td>{{product.price.value}}</td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{product.price}}</td>
                         <!-- subtotal logic  -->
                         <td>
                             <!-- <button class="btn btn-link text-danger" (click)="deleteProduct(product)"> -->
@@ -44,7 +44,7 @@
 
     </div>
 </div>
-<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="buynow" aria-hidden="true">
+<div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
       <div class="modal-content">
         <div class="modal-header">
