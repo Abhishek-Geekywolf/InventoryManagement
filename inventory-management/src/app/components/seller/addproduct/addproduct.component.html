@@ -24,16 +24,16 @@
 
                 <div class="form-group mb-3">
                     <label for="productPrice">Product Price</label>
-                    <input id="productPrice" type="number" class="form-control" formControlName="productPrice" placeholder="Enter Price">
-                    <div *ngIf="productForm.get('productPrice')?.invalid && (productForm.get('productPrice')?.touched || productForm.get('productPrice')?.dirty)" class="text-danger">
+                    <input id="price" type="number" class="form-control" formControlName="price" placeholder="Enter Price">
+                    <div *ngIf="productForm.get('price')?.invalid && (productForm.get('price')?.touched || productForm.get('price')?.dirty)" class="text-danger">
                         Price is required and must be a positive number.
                     </div>
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="productQuantity">Product Quantity</label>
-                    <input id="productQuantity" type="number" class="form-control" formControlName="productQuantity" placeholder="Enter Quantity">
-                    <div *ngIf="productForm.get('productQuantity')?.invalid && (productForm.get('productQuantity')?.touched || productForm.get('productQuantity')?.dirty)" class="text-danger">
+                    <label for="totalQuantity">Product Quantity</label>
+                    <input id="totalQuantity" type="number" class="form-control" formControlName="totalQuantity" placeholder="Enter Quantity">
+                    <div *ngIf="productForm.get('totalQuantity')?.invalid && (productForm.get('totalQuantity')?.touched || productForm.get('totalQuantity')?.dirty)" class="text-danger">
                         Quantity is required and must be at least 1.
                     </div>
                 </div>

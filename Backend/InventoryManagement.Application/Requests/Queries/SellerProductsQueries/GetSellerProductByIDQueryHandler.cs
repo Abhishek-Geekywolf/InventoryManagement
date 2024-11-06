@@ -28,6 +28,7 @@ namespace InventoryManagement.Application.Requests.Queries.SellerProductsQueries
                 foreach (var seller in Sellers)
                 {
                     SellerProductDto sellerobj = new SellerProductDto();
+                    sellerobj.SellerProductId = seller.Id;
                     sellerobj.SellerId = request.getid;
                     sellerobj.ProductName = seller.ProductName;
                     sellerobj.AvailableQuantity = seller.TotalQuantity - seller.OrderedQuantity;

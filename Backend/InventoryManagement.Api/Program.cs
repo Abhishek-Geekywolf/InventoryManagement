@@ -11,7 +11,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 builder.Services.AddDbContext<InventoryManagementContext>(x =>
 {
     x.UseSqlServer(@"Server=localhost,1415;Database=InventoryManagement;User Id=sa;Password=Database!2021;TrustServerCertificate=true");

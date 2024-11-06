@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SellerApiService } from '../../../../service/sellerapi.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-slogin',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,RouterLink,RouterLinkActive,HttpClientModule],
   templateUrl: './login.component.html',

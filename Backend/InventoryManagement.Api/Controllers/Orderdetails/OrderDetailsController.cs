@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InventoryManagement.Api.Controllers
+namespace InventoryManagement.Api.Controllers.Orderdetails
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -10,6 +10,7 @@ import { SLoginComponent } from './components/auth/seller/login/login.component'
 import { SSignupComponent } from './components/auth/seller/signup/signup.component';
 import { CLoginComponent } from './components/auth/customer/login/login.component';
 import { CSignupComponent } from './components/auth/customer/signup/signup.component';
+import { UpdateproductComponent } from './components/seller/updateproduct/updateproduct.component';
 
 
 export const routes: Routes = [
@@ -62,5 +63,9 @@ export const routes: Routes = [
     {
         path:'your-cart',
         component:CartComponent
+    },
+    {
+        path:'update-products',
+        component:UpdateproductComponent
     }
 ];

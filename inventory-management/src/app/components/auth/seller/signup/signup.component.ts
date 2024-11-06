@@ -6,7 +6,7 @@ import { SellerApiService } from '../../../../service/sellerapi.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-signup',
+  selector: 'app-ssignup',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './signup.component.html',

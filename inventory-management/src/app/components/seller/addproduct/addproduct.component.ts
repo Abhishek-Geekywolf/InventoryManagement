@@ -21,8 +21,8 @@ export class AddproductComponent implements OnInit{
     this.productForm = this.fb.group({
       sellerId:['',Validators.required],
       productName: ['', Validators.required],
-      productPrice: ['', [Validators.required, Validators.min(0)]],
-      productQuantity: ['', [Validators.required, Validators.min(1)]],
+      price: ['', [Validators.required, Validators.min(0)]],
+      totalQuantity: ['', [Validators.required, Validators.min(1)]],
     });
   }
 
@@ -38,14 +38,16 @@ export class AddproductComponent implements OnInit{
   {
     if(this.productForm.valid)
     {
-      const product: Product = this.productForm.value; // Create a product object
+      const product: Product = this.productForm.value; 
       console.log('Form Submitted!', product);
+      alert('Form Submitted!');
       this.apiService.addProduct(product);
       this.toaster.success("task added","success");
 
-      // Here you can handle the form data, e.g., send it to a server
     } else {
       console.log('Form is invalid');
+      alert('Form is invalid!');
+
     }
 
     

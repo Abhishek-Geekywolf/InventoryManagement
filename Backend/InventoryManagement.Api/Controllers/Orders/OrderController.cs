@@ -42,7 +42,7 @@ namespace InventoryManagement.Api.Controllers.Orders
 
 
         [HttpGet("id")]
-        public async Task<ActionResult<List<OrderOrderDetailsSellerProductDto>>> GetAllOrderHistory(int id)
+        public async Task<ActionResult<List<OrderOrderDetailsSellerProductDto>>> GetOrderHistoryById(int id)
         {
             var query = new GetAllOrderHistoryQuery();
             query.getid = id;

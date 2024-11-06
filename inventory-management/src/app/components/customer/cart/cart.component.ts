@@ -4,10 +4,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { SearchComponent } from '../customershared/search/search.component';
 import { Product } from '../../../models/products';
 import { Order } from '../../../models/order';
-import { PurchasehistoryService } from '../../../service/purchasehistory.service';
 import { CustomernavComponent } from "../customershared/customernav/customernav.component";
-import { ProductList } from '../../../models/customercartlist';
-import { FormControl } from '@angular/forms';
 import { SellerApiService } from '../../../service/sellerapi.service';
 
 @Component({
@@ -23,7 +20,9 @@ export class CartComponent {
   selectedProductName: string = ''; 
   selectedSellerId: number=1;
 
+
   constructor(){}
+
   
   @Input() productlist: any[] = []; 
   service=inject(SellerApiService);
@@ -36,6 +35,7 @@ export class CartComponent {
   }
 
  
+
 
 //   onProductChange(event: any): void {
 //     this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
@@ -70,6 +70,7 @@ export class CartComponent {
 //         quantity: new FormControl(30),
 //     },
 // ];
+
 
 
 

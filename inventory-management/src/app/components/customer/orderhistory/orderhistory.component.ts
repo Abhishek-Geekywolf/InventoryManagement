@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CustomernavComponent } from '../customershared/customernav/customernav.component';
 import { Product } from '../../../models/products';
 import { Order } from '../../../models/order';
-import { PurchasehistoryService } from '../../../service/purchasehistory.service';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from "../customershared/search/search.component";
@@ -21,28 +20,28 @@ export class OrderhistoryComponent {
   selectedSellerId:number=1;
   
 
-  constructor(private purchaseservice:PurchasehistoryService){}
+  constructor(){}
   
   ngOnInit(): void {
-    this.products = this.purchaseservice.getProducts();
-    this.loadOrders(); // Load all orders by default
+    // this.products = this.purchaseservice.getProducts();
+    // this.loadOrders(); // Load all orders by default
   }
 
  
 
-  onProductChange(event: any): void {
-    this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
-    this.loadOrders();
-}
+//   onProductChange(event: any): void {
+//     this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
+//     this.loadOrders();
+// }
 
 
-  loadOrders(): void {
-    if (!this.selectedProductName) {
-      this.purchaseservice.getAllOrders(this.selectedSellerId); // Show all orders
-    } else {
-      this.purchaseservice.getOrdersByProductName(this.selectedProductName);
-    }
-  }
+//   loadOrders(): void {
+//     if (!this.selectedProductName) {
+//       this.purchaseservice.getAllOrders(this.selectedSellerId); // Show all orders
+//     } else {
+//       this.purchaseservice.getOrdersByProductName(this.selectedProductName);
+//     }
+//   }
 
 }
 

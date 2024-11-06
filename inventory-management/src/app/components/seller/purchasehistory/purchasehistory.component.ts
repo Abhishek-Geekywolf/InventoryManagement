@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { Product } from '../../../models/products';
 import { Order } from '../../../models/order';
 import { NavComponent } from "../../shared/nav/nav.component";
-import { PurchasehistoryService } from '../../../service/purchasehistory.service';
+import { SellerApiService } from '../../../service/sellerapi.service';
 
 @Component({
   selector: 'app-purchasehistory',
@@ -15,46 +15,97 @@ import { PurchasehistoryService } from '../../../service/purchasehistory.service
 })
 export class PurchasehistoryComponent implements OnInit{
 
-  products: Product[] = [];
-  orders: Order[] = [];
+  orders: any[]= [];
+  products:any[]=[];
   selectedProductName: string = ''; 
-  selectedSellerId: number = 1;
+  service=inject(SellerApiService);
   
 
-  constructor(private purchaseservice:PurchasehistoryService){}
   
-  ngOnInit(){
-    this.products = this.purchaseservice.getProducts();
-    this.loadOrders(); // Load all orders by default
-  }
+  
 
   // onProductChange(productName: string): void {
   //   this.selectedProductName = productName;
   //   this.loadOrders();
   // }
 
-  onProductChange(event: any): void {
-    this.selectedProductName = event ? event.productName.value : ''; // Handle empty selection
-    this.loadOrders();
+
+
+
+
+
+
+// getAllOrders(): Order[] {
+
+//   this.service.orderdetails(1).subscribe({
+//       next: (response: any) => {
+//         if (response && response.length > 0) {
+//           this.orders = response; 
+//           console.log(this.orders);
+//         } else {
+//           alert("No products found");
+//         }
+//       },
+//       error: (error) => {
+//         console.error("Error fetching products:", error);
+//         alert("An error occurred while fetching products");
+//       }
+//     });
+    
+//     console.log('out',this.orders);
+//     return this.orders;
+
+
+//   }
+
+
+
+
+//   loadOrders(){
+//     if (!this.selectedProductName) {
+//       this.orders = this.getAllOrders();
+//     } else {
+//       this.orders = this.getOrdersByProductName(this.selectedProductName);
+//     }
+//   }
+
+ 
+// }
+ngOnInit(): void {
+  this.loadOrders();    
 }
 
+onProductChange(event: any): void {
+  this.selectedProductName = event ? event.productName: '';
+  console.log(this.selectedProductName)
+  this.loadOrders();
+}
 
-  loadOrders() {
+getOrdersByProductName(productName: string): any {
+  return this.products.filter(x => x.productName === productName);
+}
+  loadOrders(){
     if (!this.selectedProductName) {
-      this.purchaseservice.getAllOrders(this.selectedSellerId).subscribe(
-        {
-          next: (orders: any) => {
-            this.orders = orders; // Store fetched orders
-          },
-          error: (error) => {
-            console.error('Error fetching orders', error);
-            this.orders = []; // Clear orders on error
+      this.service.orderdetails(1).subscribe({
+        next: (response: any) => {
+          if (response && response.length > 0) {
+            this.orders = response; 
+            this.products=this.orders;
+            console.log(this.orders);
+          } else {
+            alert("No products found");
           }
+        },
+        error: (error) => {
+          console.error("Error fetching products:", error);
+          alert("An error occurred while fetching products");
         }
-      )
+      });
     } else {
-      this.purchaseservice.getOrdersByProductName(this.selectedProductName);
+      this.orders = this.getOrdersByProductName(this.selectedProductName);
+      console.log(this.orders);
     }
   }
 
+ 
 }
