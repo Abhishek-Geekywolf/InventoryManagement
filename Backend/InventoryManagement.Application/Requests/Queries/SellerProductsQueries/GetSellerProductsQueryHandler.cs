@@ -1,34 +1,35 @@
-﻿using InventoryManagement.Application.Requests.DTOs;
-using InventoryManagement.Infrastructure.Data;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InventoryManagement.Application.Requests.DTOs;
+using InventoryManagement.Infrastructure.Data;
+using MediatR;
 
 namespace InventoryManagement.Application.Requests.Queries.SellerProductsQueries
 {
-    public class GetSellerProductByIDQueryHandler : IRequestHandler<GetSellerProductByIDQuery, List<SellerProductDto>>
+    public class GetSellerProductsQueryHandler : IRequestHandler<GetSellerProductsQuery, List<SellerProductDto>>
     {
         private readonly InventoryManagementContext _context;
 
-        public GetSellerProductByIDQueryHandler(InventoryManagementContext context)
+        public GetSellerProductsQueryHandler(InventoryManagementContext context)
         {
             _context = context;
         }
 
-        public async Task<List<SellerProductDto>> Handle(GetSellerProductByIDQuery request, CancellationToken cancellationToken)
+        public async Task<List<SellerProductDto>> Handle(GetSellerProductsQuery request, CancellationToken cancellationToken)
         {
             List<SellerProductDto> result = new List<SellerProductDto>();
             var re = await Task.Run(() =>
             {
-                var Sellers = _context.SellerProducts.Where(x => x.SellerID.Equals(request.getid));
+                var Sellers = _context.SellerProducts;
                 foreach (var seller in Sellers)
                 {
                     SellerProductDto sellerobj = new SellerProductDto();
-                    sellerobj.SellerId = request.getid;
+                  //  sellerobj.Id = seller.Id;
+                    sellerobj.Id = seller.Id;
+                    sellerobj.SellerId = seller.SellerID;
                     sellerobj.ProductName = seller.ProductName;
                     sellerobj.AvailableQuantity = seller.TotalQuantity - seller.OrderedQuantity;
                     sellerobj.Price = seller.Price;

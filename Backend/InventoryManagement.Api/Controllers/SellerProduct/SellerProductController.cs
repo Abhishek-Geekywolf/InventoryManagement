@@ -40,5 +40,12 @@ namespace InventoryManagement.Api.Controllers.SellerProduct
             return await _mediator.Send(query);
         }
 
+        [HttpGet]
+        public async Task<List<SellerProductDto>> GetSellerProducts()
+        {
+            GetSellerProductsQuery query = new GetSellerProductsQuery();
+            return await _mediator.Send(query);
+        }
+
     }
 }
