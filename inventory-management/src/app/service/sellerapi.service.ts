@@ -18,6 +18,8 @@ export class SellerApiService {
   url:string='https://localhost:7115/api/Seller';
   public router = inject(Router); 
   public sellerid:number=0;
+  public custid:number=0;
+
   public name: string = '';
   
   private searchSubject = new BehaviorSubject<string>(''); 
@@ -26,6 +28,13 @@ export class SellerApiService {
 
   http=inject(HttpClient)
   toaster=inject(ToastrService);
+  
+ setsellerid(id:number)
+ {
+   this.sellerid=id;
+ } 
+
+ 
 
   addSeller(seller:sellerlogin)
   {
@@ -43,10 +52,6 @@ export class SellerApiService {
 checkseller(seller:sellerlogin){
  return this.http.get(`https://localhost:7115/api/Seller?email=${seller.email}&password=${seller.password}`)}
 
- setsellerid(id:number)
-{
-  this.sellerid=id;
-} 
 
 
 
@@ -65,7 +70,6 @@ AddCustomer(customer:customerlogin){
     }
   }
 })}
-public custid:number=0;
 
 checkcustomer(customer:customerlogin){
   this.http.get(`https://localhost:7115/api/Customer?email=${customer.email}&password=${customer.password}`).subscribe({
@@ -101,20 +105,34 @@ public cart: any[] = [];
 public subprice:number=0;
 
 addToCart(product: any, quantity: number): void {
-  const existingProduct = this.cart.find(item => item.id === product.id);
+  const existingProduct = this.cart.find(item => item.id === product.sellerProductId);
+  console.log('p',product.availableQuantity);
+  console.log(quantity);
   if (existingProduct) {
-    // Update quantity if product already exists in cart
-    existingProduct.quantity += quantity;
-  } else {
-    // Add new product to cart
-    this.subprice=quantity*product.price;
-    const cartProduct = {
-      productName: product.productName,
-      price: this.subprice,
-      quantity: quantity,
-      id: product.id
-    };
-    this.cart.push(cartProduct);
+    if(existingProduct.quantity+quantity>product.availableQuantity)
+    {
+      alert("Total Available Quantity is less than the quantity added")
+    }
+    else{
+      existingProduct.quantity += quantity;
+    }
+  } 
+  else {
+    if(quantity>product.availableQuantity)
+    {
+      alert("Total Available Quantity is less than the quantity added")
+    }
+    else{
+      this.subprice=quantity*product.price;
+      const cartProduct = {
+        productName: product.productName,
+        price: this.subprice,
+        quantity: quantity,
+        id: product.sellerProductId
+      };
+      this.cart.push(cartProduct);
+      alert("Product Added To cart")
+          }
   }
 }
 
@@ -124,8 +142,11 @@ getCart(): any[] {
 
 
 updateProduct(sellerid:number,productData:any){
-  return this.http.put(`https://localhost:7115/api/SellerProduct/name?id=${sellerid}`,productData)
+  return this.http.put(`https://localhost:7115/api/SellerProduct/name?id=${sellerid}`,productData);
 
+}
+getCustomerOrderHistory(){
+  return this.http.get(`https://localhost:7115/api/Order/CustId?id=1`);
 }
 
 }

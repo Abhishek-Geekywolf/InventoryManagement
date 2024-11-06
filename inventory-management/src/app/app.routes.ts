@@ -11,6 +11,7 @@ import { SSignupComponent } from './components/auth/seller/signup/signup.compone
 import { CLoginComponent } from './components/auth/customer/login/login.component';
 import { CSignupComponent } from './components/auth/customer/signup/signup.component';
 import { UpdateproductComponent } from './components/seller/updateproduct/updateproduct.component';
+import { TestComponent } from './test/test.component';
 
 
 export const routes: Routes = [
@@ -67,5 +68,9 @@ export const routes: Routes = [
     {
         path:'update-products',
         component:UpdateproductComponent
-    }
+    },
+    // {
+    //     path:'app-test',
+    //     component:TestComponent
+    // }
 ];

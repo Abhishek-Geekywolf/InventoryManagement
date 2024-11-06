@@ -3,7 +3,6 @@ import { FormControl } from "@angular/forms";
 export interface Product {
     sellerProductId?:FormControl<number|null>;
     
-    sellerid:FormControl<number|null>
     productName: FormControl<string|null>;
     totalQuantity: FormControl<number|null>;
     availableQuantity: FormControl<number|null>;
@@ -13,6 +12,7 @@ export interface Product {
     addQuantity: FormControl<number|null>;
 
     id:FormControl<number|null>;
+    sellerid:number;
    
   }
 
