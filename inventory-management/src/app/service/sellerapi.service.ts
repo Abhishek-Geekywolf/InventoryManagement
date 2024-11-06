@@ -117,6 +117,7 @@ addToCart(product: any, quantity: number): void {
     }
     else{
       existingProduct.quantity += quantity;
+      this.toaster.success("product added to cart","success");
       existingProduct.price = existingProduct.quantity * product.price;
     }
   } 
@@ -134,7 +135,8 @@ addToCart(product: any, quantity: number): void {
         id: product.sellerProductId
       };
       this.cart.push(cartProduct);
-      alert("Product Added To cart")
+      this.toaster.success("product added to cart","success");
+
           }
   }
 
