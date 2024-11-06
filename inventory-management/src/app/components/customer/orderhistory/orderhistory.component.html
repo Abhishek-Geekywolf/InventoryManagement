@@ -1,41 +1,58 @@
 <app-customernav></app-customernav>
 
+<mat-card style="min-height: 500px; margin-top: 100px;">
+    <mat-card-header>
+      <h1>Your Order History</h1>
+    </mat-card-header>
+    <mat-card-content style=" margin-top: 30px;">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+        <!-- Main Table  -->
+        <ng-container matColumnDef="orderId">
+          <th mat-header-cell *matHeaderCellDef><b>Order Id</b></th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td> 
+        </ng-container>
+  
+        <ng-container matColumnDef="orderDate">
+          <th mat-header-cell *matHeaderCellDef><b>Order Date</b></th>
+          <td mat-cell *matCellDef="let element">{{ element.orderDate|date }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="totalPrice">
+          <th mat-header-cell *matHeaderCellDef><b>Total Price</b></th>
+          <td mat-cell *matCellDef="let element">{{ element.totalPrice|currency }}</td> 
+        </ng-container>
+  
+        <!-- Inner Table  -->
+        <ng-container matColumnDef="innerTable">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let order">
+            <table mat-table *ngIf="order.showDetails" [dataSource]="order.orderDetails"> 
+              <ng-container matColumnDef="productName">
+                <th mat-header-cell *matHeaderCellDef><b>Product Name</b></th>
+                <td mat-cell *matCellDef="let item">{{ item.productName }}</td>
+              </ng-container>
+  
+              <ng-container matColumnDef="quantity">
+                <th mat-header-cell *matHeaderCellDef><b>Quantity</b></th>
+                <td mat-cell *matCellDef="let item">{{ item.quantity }}</td>
+              </ng-container>
+  
+              <ng-container matColumnDef="subTotalPrice">
+                <th mat-header-cell *matHeaderCellDef><b>Sub Total</b></th>
+                <td mat-cell *matCellDef="let item">{{ item.subTotalPrice  }}</td>
+              </ng-container>
+  
+              <tr mat-header-row *matHeaderRowDef="innerToDisplay"></tr>
+              <tr mat-row *matRowDef="let row; columns: innerToDisplay"></tr>
 
-<div class="container mt-5 pt-5">
-    <h1 class="display-6 fw-bold text-center mb-5">Purchase History</h1>
-    
-    <div class="row justify-content-center">
-        
-        <div class="col-md-8"> <!-- Adjusted to make it wider -->
-    
-
-            <h2 *ngIf="selectedProductName" class="text-center">Orders for {{ selectedProductName }}</h2>
-
-            <table class="table table-striped table-bordered">
-                <thead class="thead-light"> <!-- Bootstrap class for header styling -->
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Customer ID</th>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
-                        <th>Sub Price</th>
-                        <th>Order Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let order of orders">
-                        <td>{{ order.orderId.value }}</td>
-                        <td>{{ order.customerId.value }}</td>
-                        <td>{{ order.productName.value }}</td>
-                        <td>{{ order.quantity.value}}</td>
-                        <td>{{ order.subPrice.value }}</td>
-                        <td>{{ order.orderDate.value }}</td>
-                    </tr>
-                    <tr *ngIf="orders.length === 0">
-                        <td colspan="6" class="text-center">No orders found</td>
-                    </tr>
-                </tbody>
             </table>
-        </div>
-    </div>
-</div>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay" (click)="toggle(row)"></tr>
+  
+      </table>
+    </mat-card-content>
+  </mat-card>
