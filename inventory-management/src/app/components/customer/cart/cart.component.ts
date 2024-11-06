@@ -24,14 +24,16 @@ export class CartComponent {
   constructor(){}
 
   
-  @Input() productlist: any[] = []; 
+  @Input() productlist: Product[] = []; 
   service=inject(SellerApiService);
+
   ngOnInit(): void {
     // this.products = this.purchaseservice.getProducts();
     // this.loadOrders(); // Load all orders by default
     this.productlist = this.service.getCart();
    // console.log('cart list');
     console.log('cart list',this.productlist);
+    
   }
 
  
