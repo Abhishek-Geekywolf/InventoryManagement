@@ -156,7 +156,7 @@
   },
   {
     "ContainingType": "InventoryManagement.Api.Controllers.Orderdetails.OrderDetailsController",
-    "Method": "GetOrderdetails",
+    "Method": "AddOrderdetails",
     "RelativePath": "api/OrderDetails",
     "HttpMethod": "POST",
     "IsController": true,
@@ -254,6 +254,26 @@
     "ReturnTypes": [
       {
         "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryManagement.Api.Controllers.SellerProduct.SellerProductController",
+    "Method": "GetSellerProducts",
+    "RelativePath": "api/SellerProduct",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[InventoryManagement.Application.Requests.DTOs.SellerProductDto, InventoryManagement.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
