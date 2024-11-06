@@ -16,7 +16,7 @@ namespace InventoryManagement.Api.Controllers.Orderdetails
             _mediator = mediator;
         }
         [HttpPost]
-        public async Task<int> GetOrderdetails(AddOrderDetailsCommand command)
+        public async Task<int> AddOrderdetails(AddOrderDetailsCommand command)
         {
             return await _mediator.Send(command);
         }

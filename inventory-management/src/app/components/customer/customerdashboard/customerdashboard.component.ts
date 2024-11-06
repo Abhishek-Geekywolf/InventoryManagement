@@ -67,10 +67,13 @@ export class CustomerdashboardComponent {
     this.quantity = 1; 
   }
 
+  //subprice:number=0;
+
   addToCart(): void {
     console.log('Product added to cart:', this.selectedProduct.productName);
     console.log('Quantity:', this.quantity);
     console.log('id:',this.selectedProduct);
+
     this.service.addToCart(this.selectedProduct, this.quantity);
     
   //   const existingProduct = this.cart.find(item => item.id === this.selectedProduct.id);

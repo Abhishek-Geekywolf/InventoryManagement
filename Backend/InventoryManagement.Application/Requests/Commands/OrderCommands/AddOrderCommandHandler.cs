@@ -25,6 +25,7 @@ namespace InventoryManagement.Application.Requests.Commands.OrderCommands
             orders.CustomerID = request.CustomerId;
             _context.Orders.Add(orders);
             return await _context.SaveChangesAsync();
+
         }
     }
 }

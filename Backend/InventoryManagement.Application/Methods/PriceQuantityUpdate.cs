@@ -18,14 +18,14 @@ namespace InventoryManagement.Application.Methods
             _context = context;
         }
 
-        public void Update(OrderDetails obj,int SellerProductId,int OrderId) 
+        public void Update(OrderDetails obj,int SellerProductId) 
         {
             var SellerProduct = _context.SellerProducts.FirstOrDefault(x => x.Id == (SellerProductId));
             SellerProduct.OrderedQuantity =SellerProduct.OrderedQuantity + obj.Quantity;
-            obj.SubTotalPrice = SellerProduct.Price*obj.Quantity;
+           // obj.SubTotalPrice = SellerProduct.Price*obj.Quantity;
 
-            var OrderObj=_context.Orders.FirstOrDefault(x => x.Id== (OrderId));
-            OrderObj.TotalPrice = OrderObj.TotalPrice + obj.SubTotalPrice;
+           // var OrderObj=_context.Orders.FirstOrDefault(x => x.Id== (OrderId));
+           // OrderObj.TotalPrice = OrderObj.TotalPrice + obj.SubTotalPrice;
             _context.SaveChanges();
 
         }
