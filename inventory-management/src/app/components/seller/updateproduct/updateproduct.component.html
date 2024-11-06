@@ -4,10 +4,8 @@
 <br>
 <div class="container mt-5" style="padding-top: 150px;">
     <div class="row">
-      <!-- Form -->
       <form [formGroup]="productForm" (ngSubmit)="onUpdateProduct()">
         
-        <!-- Product Name (Readonly) -->
         <div class="mb-3 row">
           <label for="productName" class="col-sm-2 col-form-label">Product Name:</label>
           <div class="col-sm-10">
@@ -15,7 +13,6 @@
           </div>
         </div>
   
-        <!-- Current Product Price (Readonly) -->
         <div class="mb-3 row">
           <label for="price" class="col-sm-2 col-form-label">Current Product Price:</label>
           <div class="col-sm-10">
@@ -23,7 +20,6 @@
           </div>
         </div>
   
-        <!-- New Product Price -->
         <div class="mb-3 row">
           <label for="newPrice" class="col-sm-2 col-form-label">New Product Price</label>
           <div class="col-sm-10">
@@ -34,7 +30,6 @@
           </div>
         </div>
   
-        <!-- Available Quantity (Readonly) -->
         <div class="mb-3 row">
           <label for="availableQuantity" class="col-sm-2 col-form-label">Available Quantity:</label>
           <div class="col-sm-10">
@@ -42,7 +37,6 @@
           </div>
         </div>
   
-        <!-- Add Quantity -->
         <div class="mb-3 row">
           <label for="addQuantity" class="col-sm-2 col-form-label">Add Quantity</label>
           <div class="col-sm-10">
@@ -53,7 +47,6 @@
           </div>
         </div>
   
-        <!-- Submit Button -->
         <div class="mb-3 row">
           <div class="col-sm-10 offset-sm-2">
             <button type="submit" class="btn btn-primary" >Update</button>

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../../../service/api.service';
 import { ToastrService } from 'ngx-toastr';
 import { SellerApiService } from '../../../service/sellerapi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addproduct',
@@ -34,6 +35,7 @@ export class AddproductComponent implements OnInit{
   service=inject(SellerApiService)
   toaster=inject(ToastrService);
   sellerid=this.service.sellerid;
+  router=inject(Router)
   onSubmit()
   {
     if(this.productForm.valid)
@@ -43,6 +45,8 @@ export class AddproductComponent implements OnInit{
       console.log(this.sellerid);
       this.apiService.addProduct(product);
       this.toaster.success("product added","success");
+      this.router.navigate(['/dash']); 
+
 
     } else {
       console.log('Form is invalid');
