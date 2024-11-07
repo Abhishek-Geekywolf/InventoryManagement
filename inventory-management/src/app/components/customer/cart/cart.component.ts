@@ -66,14 +66,10 @@ export class CartComponent {
         this.cart.splice(index, 1);
       }
 
-<<<<<<< HEAD
       this.totalPrice = this.cart.reduce((acc: any, item: { price: any; }) => acc + item.price, 0);
 
       localStorage.setItem(`cart_${this.customerId}`, JSON.stringify(this.cart));
-=======
-      this.totalPrice = this.productlist.reduce((acc: any, item: { price: any; }) => acc + item.price, 0);
       this.toaster.success("seller added","success");
->>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
 
 
       console.log('Product removed. Updated total price:', this.totalPrice);
@@ -82,14 +78,8 @@ export class CartComponent {
     }
   }
 
-<<<<<<< HEAD
 
  
-
-  router = inject(Router)
-=======
->>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
-
 
   buyNow() {
     const orderRequest = {
@@ -120,11 +110,8 @@ export class CartComponent {
 
 
     );
-<<<<<<< HEAD
     this.router.navigate(['/customer-dash']);
     this.service.clearCart(this.customerId);
-=======
->>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
   }
 
 }

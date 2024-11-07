@@ -29,7 +29,8 @@ export class SellerApiService {
     return this.http.post('https://localhost:7115/api/Seller',seller)
   }
 
-
+  checkseller(seller: sellerlogin) {
+    return this.http.get(`https://localhost:7115/api/Seller?email=${seller.email}&password=${seller.password}`)}
 
 
   AddCustomer(customer: customerlogin) {
@@ -38,34 +39,24 @@ export class SellerApiService {
 
 
 
-  checkcustomer(customer: customerlogin) {
-    this.http.get(`https://localhost:7115/api/Customer?email=${customer.email}&password=${customer.password}`).subscribe({
-      next: (response: any) => {
-        if (response != 0) {
-          alert("customerfound")
-          localStorage.setItem('custId', response)
-          this.router.navigate(['/customer-dash']);
-        }
-        else {
-          alert("customernotfound")
-        }
-      }
-    })
-  }
+checkcustomer(customer:customerlogin){
+  return this.http.get(`https://localhost:7115/api/Customer?email=${customer.email}&password=${customer.password}`)
+}
 
 
-  sellerproduct(sellerid: number) {
-    return this.http.get(`https://localhost:7115/api/SellerProduct/id?id=1`)
+sellerproduct(sellerid:number){
+ return this.http.get(`https://localhost:7115/api/SellerProduct/id?id=${sellerid}`)
 
-  }
-  orderdetails(sellerid: number) {
-    return this.http.get(`https://localhost:7115/api/Order/id?id=${sellerid}`)
-  }
+}
+orderdetails(sellerid:number){
+  return this.http.get(`https://localhost:7115/api/Order/id?id=${sellerid}`)
+}
 
-  customerproduct() {
-    return this.http.get("https://localhost:7115/api/SellerProduct");
-  }
-
+customerproduct()
+{
+  return this.http.get("https://localhost:7115/api/SellerProduct");
+}
+  
   public cart: any[] = [];
   public subprice: number = 0;
   public totalPrice: number = 0;
