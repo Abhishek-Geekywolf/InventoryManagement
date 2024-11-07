@@ -9,6 +9,7 @@ import { Product } from '../models/products';
 import { updateProduct } from '../models/updateproduct';
 import { FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Order } from '../models/order';
 
 @Injectable({
   providedIn: 'root'
@@ -17,42 +18,15 @@ export class SellerApiService {
 
   url:string='https://localhost:7115/api/Seller';
   public router = inject(Router); 
-
   public name: string = '';
-  
-  private searchSubject = new BehaviorSubject<string>(''); 
-  public search$ = this.searchSubject.asObservable();
-
-
+  products: Product[] = [];
+  selectedSellerId: number = 1;
   http=inject(HttpClient)
   toaster=inject(ToastrService);
   
- 
-
- 
-
   addSeller(seller:sellerlogin)
   {
-    this.http.post('https://localhost:7115/api/Seller',seller).subscribe(
-    {
-      next:(response:any)=>{
-      if(response!=0)
-      {
-        alert("selleradded")
-        this.toaster.success("seller added","success");
-        this.router.navigate(['/seller/login']);
-
-      }
-      
-      },
-      error: (error) => {
-        console.error("Error fetching products:", error);
-        alert("Email already exists");
-        this.toaster.success("seller added","success");
-        this.router.navigate(['/seller/signup']);
-
-      }
-    });
+    return this.http.post('https://localhost:7115/api/Seller',seller)
   }
       
    
@@ -69,24 +43,12 @@ AddCustomer(customer:customerlogin){
 
 
 checkcustomer(customer:customerlogin){
-  this.http.get(`https://localhost:7115/api/Customer?email=${customer.email}&password=${customer.password}`).subscribe({
-    next:(response:any)=>
-      {
-        if(response!=0){
-          alert("customerfound")
-          localStorage.setItem('custId',response)
-          this.router.navigate(['/customer-dash']);
-        }
-        else{
-          alert("customernotfound")
-        }
-      }
-  })
+  return this.http.get(`https://localhost:7115/api/Customer?email=${customer.email}&password=${customer.password}`)
 }
 
 
 sellerproduct(sellerid:number){
- return this.http.get(`https://localhost:7115/api/SellerProduct/id?id=1`)
+ return this.http.get(`https://localhost:7115/api/SellerProduct/id?id=${sellerid}`)
 
 }
 orderdetails(sellerid:number){
@@ -166,16 +128,21 @@ createOrder(orderRequest:any)
 {
   return this.http.post("https://localhost:7115/api/OrderDetails",orderRequest)
 }
-addProduct(product :Product):void
+addProduct(product :Product)
   {
-    this.http.post("https://localhost:7115/api/SellerProduct",product).subscribe(
-      {
-        next:(response:any)=>{
-         this.toaster.success("product added","success");
-          
-        }
-      }
-    )
+   return this.http.post("https://localhost:7115/api/SellerProduct",product)
   }
+  getProducts(): Product[] {
+    return this.products;
+  }
+
+  getOrdersByProductName(productName: string) {
+    return this.http.get(`https://localhost:7115/api/Order/name?name=${productName}`)
+  }
+
+  getAllOrders(selectedSellerId: number) {
+    return this.http.get(`https://localhost:7115/api/Order/id?id=${selectedSellerId}`);
+  }
+
 
 }

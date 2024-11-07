@@ -5,6 +5,7 @@ import { sellerlogin } from '../../../../models/sellerlogin';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SellerApiService } from '../../../../service/sellerapi.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-slogin',
@@ -31,6 +32,8 @@ export class SLoginComponent implements OnInit {
   }
   service = inject(SellerApiService);
   public router = inject(Router);
+  toaster = inject(ToastrService);
+
 
 
   onSubmit() {
@@ -46,13 +49,12 @@ export class SLoginComponent implements OnInit {
       {
         next: (response: any) => {
           if (response != 0) {
-            alert(response)
+            this.toaster.success("seller login", "success");
             localStorage.setItem('sellerId', response)
             this.router.navigate(['/dash']);
           }
           else {
-            alert("sellernotfound")
-
+            this.toaster.error("Seller Login", "Failed");
           }
 
         }

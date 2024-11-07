@@ -15,9 +15,7 @@
                       'text-warning': product.availableQuantity > 0 && product.availableQuantity <= 5
                     }">
                     Available Quantity: {{ product.availableQuantity }}</p>
-                    <p class="card-text">Price: ${{ product.price }}</p>
-                    <p class="card-text">Seller product Id: {{ product.sellerProductId}}</p>
-
+                    <p class="card-text">Price: {{ product.price|currency }}</p>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Details" (click)="setProducts(product)">Details</button>
                 </div>
             </div>
