@@ -21,7 +21,7 @@
           <tr *ngFor="let product of cart">
             <td>{{ product.productName }}</td>
             <td>{{ product.quantity }}</td>
-            <td>{{product.price}}</td>
+            <td>{{product.price|currency}}</td>
             <td>
               <button (click)="openDeleteModal(product)" class="btn btn-link text-danger" data-toggle="modal"
                 data-target="#Delete">
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="d-flex justify-content-between mt-5">
-    <h3 class="display-6 fw-bold ">Total Price : {{this.totalPrice}}</h3>
+    <h3 class="display-6 fw-bold ">Total Price : {{this.totalPrice|currency}}</h3>
     <button class="btn btn-primary btn-lg  text-center  " (click)="buyNow()">Buy Now</button>
 
 

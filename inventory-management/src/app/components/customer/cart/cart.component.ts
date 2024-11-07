@@ -7,6 +7,7 @@ import { Order } from '../../../models/order';
 import { CustomernavComponent } from "../customershared/customernav/customernav.component";
 import { SellerApiService } from '../../../service/sellerapi.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -31,6 +32,8 @@ export class CartComponent {
   @Input() totalPrice: number = 0;
 
   service = inject(SellerApiService);
+  router = inject(Router)
+  toaster = inject(ToastrService);
 
   ngOnInit(): void {
 
@@ -63,9 +66,14 @@ export class CartComponent {
         this.cart.splice(index, 1);
       }
 
+<<<<<<< HEAD
       this.totalPrice = this.cart.reduce((acc: any, item: { price: any; }) => acc + item.price, 0);
 
       localStorage.setItem(`cart_${this.customerId}`, JSON.stringify(this.cart));
+=======
+      this.totalPrice = this.productlist.reduce((acc: any, item: { price: any; }) => acc + item.price, 0);
+      this.toaster.success("seller added","success");
+>>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
 
 
       console.log('Product removed. Updated total price:', this.totalPrice);
@@ -74,10 +82,13 @@ export class CartComponent {
     }
   }
 
+<<<<<<< HEAD
 
  
 
   router = inject(Router)
+=======
+>>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
 
 
   buyNow() {
@@ -98,17 +109,22 @@ export class CartComponent {
       {
         next: (response: any) => {
           console.log('Order created successfully', response);
-          alert("order placed");
+          this.toaster.success("order placed");
+          this.router.navigate(['/customer-dash']);
         },
         error: (error) => {
-          console.error('Error placing order:', error);
-          alert('Error placing order. Please try again.');
+          this.toaster.error("error placing order");
         }
-      }
+        
+      },
+
 
     );
+<<<<<<< HEAD
     this.router.navigate(['/customer-dash']);
     this.service.clearCart(this.customerId);
+=======
+>>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
   }
 
 }

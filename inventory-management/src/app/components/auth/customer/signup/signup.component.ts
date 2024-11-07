@@ -3,7 +3,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { customerlogin } from '../../../../models/customerlogin';
 import { CommonModule } from '@angular/common';
 import { SellerApiService } from '../../../../service/sellerapi.service';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -33,7 +36,10 @@ export class CSignupComponent implements OnInit {
   }
 
 
+<<<<<<< HEAD
   //router=inject(Router)
+=======
+>>>>>>> 4be5300779f884fc4a763ea38520fd8373115a69
   toaster=inject(ToastrService);
   
   onSubmit()
@@ -46,16 +52,18 @@ export class CSignupComponent implements OnInit {
 
           next:(response:any)=>{
             if(response!=0){
-             // alert("customerinserted")
+             alert("customer inserted")
              this.toaster.success("customer added","success");
              this.router.navigate(['/customer/login']);
         
+            }},
+            error: (error) => {
+              console.error("Error fetching products:", error);
+              alert("Email already exists");
+              this.toaster.error("Email already exists");
+              this.router.navigate(['/customer/signup']);
             }
-            else{
-              alert("failed")
-            }
-          }
-        })
+          });
       } else {
         console.log('Form is invalid');
       }

@@ -14,7 +14,6 @@ namespace InventoryManagement.Infrastructure.Data
         public InventoryManagementContext(DbContextOptions<InventoryManagementContext>options):base(options) { }
 
         public DbSet<Sellers> Sellers { get; set; }
-        //public DbSet<Products> Products { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
 
         public DbSet<SellerProducts>SellerProducts { get; set; }

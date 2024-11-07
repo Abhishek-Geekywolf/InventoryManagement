@@ -38,10 +38,26 @@ export class SSignupComponent implements OnInit {
     if (this.sellerloginForm.valid) {
       const seller: sellerlogin = this.sellerloginForm.value;
       console.log('Form Submitted!', seller);
-      this.service.addSeller(seller);
-      this.toaster.success("seller added","success");
-      this.router.navigate(['/seller/login']);
-
+      this.service.addSeller(seller).subscribe(
+        {
+          next:(response:any)=>{
+          if(response!=0)
+          {
+            alert("selleradded")
+            this.toaster.success("seller added","success");
+            this.router.navigate(['/seller/login']);
+    
+          }
+          
+          },
+          error: (error) => {
+            console.error("Error fetching products:", error);
+            alert("Email already exists");
+            this.toaster.error("Email already exists");
+            this.router.navigate(['/seller/signup']);
+    
+          }
+        });
     } else {
       console.log('Form is invalid');
     }

@@ -4,6 +4,7 @@ import { SellerApiService } from '../../../service/sellerapi.service';
 import { Product } from '../../../models/products';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { FormControl, FormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cardview',
@@ -30,6 +31,8 @@ export class CardviewComponent {
 
   @Input() searchQuery: string = '';
   @Input() selectedFilter: string = 'all';
+
+  toaster = inject(ToastrService);
 
   ngOnInit() {
     this.loadProducts();
@@ -72,17 +75,13 @@ export class CardviewComponent {
         if (response && response.length > 0) {
           this.products = response;
           this.filteredProducts = response;
-
           this.totalProducts = response.length;
           this.updatePaginatedProducts();
         } else {
-          alert("No products found");
+          this.toaster.error("No products found");
         }
       },
-      error: (error) => {
-        console.error("Error fetching products:", error);
-        alert("An error occurred while fetching products");
-      }
+      
     });
   }
 

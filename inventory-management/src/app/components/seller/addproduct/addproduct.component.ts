@@ -40,9 +40,18 @@ export class AddproductComponent implements OnInit {
       const product: Product = this.productForm.value;
       product.sellerid = this.sellerid;
       console.log(this.sellerid);
-      this.apiService.addProduct(product);
-      this.toaster.success("product added", "success");
-      this.router.navigate(['/dash']);
+      this.apiService.addProduct(product).subscribe(
+        {
+          next:(response:any)=>{
+           this.toaster.success("product added", "success");
+           this.router.navigate(['/dash']);
+          },
+          error: (error) => {
+            alert("Error adding product");
+            this.toaster.error("Error adding product");
+            this.router.navigate(['/customer/signup']);
+          }
+        });
 
 
     } else {
