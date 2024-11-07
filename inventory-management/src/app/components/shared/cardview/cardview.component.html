@@ -1,10 +1,20 @@
 <div class="container mt-5" style="padding-top: 150px;  "> 
     <div class="row">
         <div class="col-md-4" *ngFor="let product of paginatedProducts">
-            <div class="card mb-4">
+          <div class="card mb-4" 
+                 [ngStyle]="{
+                   'border-width': '2px',  
+                   'border-color': product.availableQuantity <= 0 ? 'red' : 
+                                   (product.availableQuantity > 0 && product.availableQuantity <= 5 ? 'yellow' : 'green'),
+                   'border-style': 'solid'
+                 }">
                 <div class="card-body">
                     <h5 class="card-title">Product Name: {{ product.productName }}</h5>
-                    <p class="card-text">Available Quantity: {{ product.availableQuantity }}</p>
+                    <p class="card-text" [ngClass]="{
+                      'text-danger': product.availableQuantity <= 0, 
+                      'text-warning': product.availableQuantity > 0 && product.availableQuantity <= 5
+                    }">
+                    Available Quantity: {{ product.availableQuantity }}</p>
                     <p class="card-text">Price: ${{ product.price }}</p>
                     <p class="card-text">Seller product Id: {{ product.sellerProductId}}</p>
 

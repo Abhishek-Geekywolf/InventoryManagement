@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { customerlogin } from '../../../../models/customerlogin';
 import { CommonModule } from '@angular/common';
 import { SellerApiService } from '../../../../service/sellerapi.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -29,13 +31,30 @@ service=inject(SellerApiService);
     
   }
 
+
+  router=inject(Router)
+  toaster=inject(ToastrService);
+  
   onSubmit()
   {
     if(this.customerloginForm.valid)
       {
         const customer: customerlogin = this.customerloginForm.value; 
         console.log('Form Submitted!', customer);
-        this.service.AddCustomer(customer);
+        this.service.AddCustomer(customer).subscribe({
+
+          next:(response:any)=>{
+            if(response!=0){
+             // alert("customerinserted")
+             this.toaster.success("customer added","success");
+             this.router.navigate(['/customer/login']);
+        
+            }
+            else{
+              alert("failed")
+            }
+          }
+        })
       } else {
         console.log('Form is invalid');
       }

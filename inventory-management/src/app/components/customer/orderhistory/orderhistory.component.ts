@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { SellerApiService } from '../../../service/sellerapi.service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
@@ -31,16 +31,17 @@ export class OrderhistoryComponent {
   columnsToDisplay: string[] = ['orderId', 'orderDate', 'totalPrice', 'innerTable'];
   innerToDisplay: string[] = ['productName', 'quantity', 'subTotalPrice'];
 
-  constructor(private service: SellerApiService, private cdr: ChangeDetectorRef) {}
+  service=inject(SellerApiService)
+  constructor(private cdr: ChangeDetectorRef) {}
 
-
+  custid=this.service.custid;
 
   ngOnInit(): void {
     this.loadOrders(); 
   }
 
   loadOrders() {
-    this.service.getCustomerOrderHistory().subscribe({
+    this.service.getCustomerOrderHistory(this.custid).subscribe({
       next: (response: any) => {
         if (response && response.length > 0) {
           this.orders = response; 

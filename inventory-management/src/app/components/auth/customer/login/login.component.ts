@@ -37,7 +37,7 @@ service=inject(SellerApiService);
       {
         const customer: customerlogin = this.customerloginForm.value; 
         console.log('Form Submitted!', customer);
-        this.service.checkcustomer(customer)
+        this.service.checkcustomer(customer);
       } else {
         console.log('Form is invalid');
       }
