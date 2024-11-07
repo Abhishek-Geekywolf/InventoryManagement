@@ -1,0 +1,43 @@
+<app-nav></app-nav>
+<div class="container mt-5 pt-5">
+    <h1 class="display-6 fw-bold text-center mb-5">Purchase History</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="form-group mb-3">
+                <ng-select [items]="products" bindLabel="productName" bindValue="id" [placeholder]="'Select a product'"
+                    (change)="onProductChange($event)">
+                    <ng-option [value]="0">All Products</ng-option>
+                </ng-select>
+
+            </div>
+
+            <h2 *ngIf="selectedProductName" class="text-center">Orders for {{ selectedProductName }}</h2>
+
+            <table class="table table-striped table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer ID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Sub Price</th>
+                        <th>Order Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders">
+                        <td>{{ order.orderId }}</td>
+                        <td>{{ order.customerId }}</td>
+                        <td>{{ order.productName }}</td>
+                        <td>{{ order.quantity}}</td>
+                        <td>{{ order.subPrice }}</td>
+                        <td>{{ order.orderDate}}</td>
+                    </tr>
+                    <tr *ngIf="orders.length === 0">
+                        <td colspan="6" class="text-center">No orders found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div>
+    <app-nav></app-nav>
+    <app-search (searchChanged)="onSearchChanged($event)" (filterChanged)="onFilterChanged($event)"></app-search>
+    <app-cardview [searchQuery]="searchQuery" [selectedFilter]="selectedFilter"></app-cardview>
+</div>
