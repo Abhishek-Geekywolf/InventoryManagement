@@ -64,5 +64,28 @@ onUpdateProduct() {
 
   }
 }
+
+ 
+onDeleteProduct() {
+  const deleteData = {
+    quantity: -this.sellerData.availableQuantity, 
+    price: this.sellerData.price, 
+  };
+  // Call the update product API to set quantity to 0
+  console.log(deleteData)
+  this.service.updateProduct(this.sellerData.sellerProductId, deleteData).subscribe({
+    next: (response: any) => {
+      if (response) {
+        alert('Product Quantity Set to 0');
+        this.router.navigate(['/dash']);
+      }
+    },
+    error: (error) => {
+      console.error("Error deleting product:", error);
+      alert("An error occurred while deleting the product");
+    }
+  });
+}
+
 }
 

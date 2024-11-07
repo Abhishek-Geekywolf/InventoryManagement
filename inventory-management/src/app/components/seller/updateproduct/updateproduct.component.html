@@ -1,7 +1,5 @@
-<app-nav></app-nav>
-<br>
-<br>
-<br>
+<!-- <app-nav></app-nav>
+
 <div class="container mt-5" style="padding-top: 150px;">
     <div class="row">
       <form [formGroup]="productForm" (ngSubmit)="onUpdateProduct()">
@@ -58,4 +56,74 @@
   </div>
   
 
-  
+   -->
+
+   <app-nav></app-nav>
+
+<div class="container mt-5" style="padding-top: 100px;">
+  <div class="row justify-content-center">
+    <!-- Form starts here -->
+    <div class="col-md-8">
+      <!-- Heading added here -->
+      <h2 class="text-center mb-4">Update Product Information</h2>
+
+      <form [formGroup]="productForm" (ngSubmit)="onUpdateProduct()" class="border p-4 rounded shadow-lg">
+        
+        <!-- Product Name -->
+        <div class="mb-3 row">
+          <label for="productName" class="col-sm-4 col-form-label font-weight-bold">Product Name:</label>
+          <div class="col-sm-8">
+            <input type="text" readonly class="form-control-plaintext" id="productName" value="{{sellerData.productName}}">
+          </div>
+        </div>
+
+        <!-- Current Product Price -->
+        <div class="mb-3 row">
+          <label for="price" class="col-sm-4 col-form-label font-weight-bold">Current Product Price:</label>
+          <div class="col-sm-8">
+            <input type="text" readonly class="form-control-plaintext" id="oldprice" value="{{sellerData.price}}">
+          </div>
+        </div>
+
+        <!-- New Product Price -->
+        <div class="mb-3 row">
+          <label for="newPrice" class="col-sm-4 col-form-label font-weight-bold">New Product Price:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="price" formControlName="price" placeholder="Enter new price">
+            <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger">
+              Price is required and must be a positive number.
+            </div>
+          </div>
+        </div>
+
+        <!-- Available Quantity -->
+        <div class="mb-3 row">
+          <label for="availableQuantity" class="col-sm-4 col-form-label font-weight-bold">Available Quantity:</label>
+          <div class="col-sm-8">
+            <input type="text" readonly class="form-control-plaintext" id="availableQuantity" value="{{sellerData.availableQuantity}}">
+          </div>
+        </div>
+
+        <!-- Add Quantity -->
+        <div class="mb-3 row">
+          <label for="addQuantity" class="col-sm-4 col-form-label font-weight-bold">Add Quantity:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="addQuantity" formControlName="quantity" placeholder="Enter quantity to add">
+            <!-- <div *ngIf="productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched" class="text-danger">
+              Quantity is required and must be a positive number.
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mb-3 row">
+          <div class="col-sm-8 offset-sm-4">
+            <button type="submit" class="btn btn-primary mr-3" [disabled]="productForm.invalid">Update</button>
+            <button type="button" class="btn btn-danger" (click)="onDeleteProduct()">Delete</button>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>
