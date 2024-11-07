@@ -5,6 +5,7 @@ import { Product } from '../../../models/products';
 import { Order } from '../../../models/order';
 import { NavComponent } from "../../shared/nav/nav.component";
 import { SellerApiService } from '../../../service/sellerapi.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-purchasehistory',
@@ -19,6 +20,7 @@ export class PurchasehistoryComponent implements OnInit {
   products: any[] = [];
   selectedProductName: string = '';
   service = inject(SellerApiService);
+  toaster = inject(ToastrService);
 
   ngOnInit(): void {
     this.loadOrders();
@@ -35,19 +37,17 @@ export class PurchasehistoryComponent implements OnInit {
   }
   loadOrders() {
     if (!this.selectedProductName) {
-      this.service.orderdetails(1).subscribe({
+      this.service.orderdetails(Number(localStorage.getItem('sellerId'))).subscribe({
         next: (response: any) => {
           if (response && response.length > 0) {
             this.orders = response;
             this.products = this.orders;
             console.log(this.orders);
-          } else {
-            alert("No products found");
-          }
+          } 
         },
         error: (error) => {
           console.error("Error fetching products:", error);
-          alert("An error occurred while fetching products");
+          this.toaster.error("No purchase history found");
         }
       });
     } else {

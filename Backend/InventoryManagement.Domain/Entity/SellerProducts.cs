@@ -29,6 +29,8 @@ namespace InventoryManagement.Domain.Entity
         public SellerProducts()
         {
             OrderedQuantity = 0;
+
         }
+        
     }
 }

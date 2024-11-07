@@ -16,7 +16,6 @@
             <table class="table table-striped table-bordered">
                 <thead class="thead-light">
                     <tr>
-                        <th>Order ID</th>
                         <th>Customer ID</th>
                         <th>Product Name</th>
                         <th>Quantity</th>
@@ -26,12 +25,11 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let order of orders">
-                        <td>{{ order.orderId }}</td>
                         <td>{{ order.customerId }}</td>
                         <td>{{ order.productName }}</td>
                         <td>{{ order.quantity}}</td>
-                        <td>{{ order.subPrice }}</td>
-                        <td>{{ order.orderDate}}</td>
+                        <td>{{ order.subPrice |currency}}</td>
+                        <td>{{ order.orderDate|date}}</td>
                     </tr>
                     <tr *ngIf="orders.length === 0">
                         <td colspan="6" class="text-center">No orders found</td>

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { customerlogin } from '../../../../models/customerlogin';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { SellerApiService } from '../../../../service/sellerapi.service';
 
 
@@ -18,6 +18,9 @@ export class CLoginComponent implements OnInit {
 
 
   customerloginForm: FormGroup;
+  service = inject(SellerApiService);
+  router=inject(Router)
+
 
   constructor(private fb: FormBuilder) {
     this.customerloginForm = this.fb.group({
@@ -25,7 +28,6 @@ export class CLoginComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-  service = inject(SellerApiService);
 
   ngOnInit(): void {
 
@@ -35,7 +37,19 @@ export class CLoginComponent implements OnInit {
     if (this.customerloginForm.valid) {
       const customer: customerlogin = this.customerloginForm.value;
       console.log('Form Submitted!', customer);
-      this.service.checkcustomer(customer)
+      this.service.checkcustomer(customer).subscribe({
+        next:(response:any)=>
+          {
+            if(response!=0){
+              alert("customerfound")
+              localStorage.setItem('custId',response)
+              this.router.navigate(['/customer-dash']);
+            }
+            else{
+              alert("customernotfound")
+            }
+          }
+      })
     } else {
       console.log('Form is invalid');
     }

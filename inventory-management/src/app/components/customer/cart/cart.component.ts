@@ -7,6 +7,7 @@ import { Order } from '../../../models/order';
 import { CustomernavComponent } from "../customershared/customernav/customernav.component";
 import { SellerApiService } from '../../../service/sellerapi.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -29,6 +30,8 @@ export class CartComponent {
   @Input() totalPrice: number = 0;
 
   service = inject(SellerApiService);
+  router = inject(Router)
+  toaster = inject(ToastrService);
 
   ngOnInit(): void {
 
@@ -52,13 +55,13 @@ export class CartComponent {
       }
 
       this.totalPrice = this.productlist.reduce((acc: any, item: { price: any; }) => acc + item.price, 0);
+      this.toaster.success("seller added","success");
 
 
       console.log('Product removed. Updated total price:', this.totalPrice);
     }
   }
 
-  router = inject(Router)
 
 
   buyNow() {
@@ -79,16 +82,17 @@ export class CartComponent {
       {
         next: (response: any) => {
           console.log('Order created successfully', response);
-          alert("order placed");
+          this.toaster.success("order placed");
+          this.router.navigate(['/customer-dash']);
         },
         error: (error) => {
-          console.error('Error placing order:', error);
-          alert('Error placing order. Please try again.');
+          this.toaster.error("error placing order");
         }
-      }
+        
+      },
+
 
     );
-    this.router.navigate(['/customer-dash']);
   }
 
 }
