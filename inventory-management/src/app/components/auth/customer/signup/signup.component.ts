@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { customerlogin } from '../../../../models/customerlogin';
 import { CommonModule } from '@angular/common';
 import { SellerApiService } from '../../../../service/sellerapi.service';
-import { Router } from '@angular/router';
+
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -33,7 +33,7 @@ export class CSignupComponent implements OnInit {
   }
 
 
-  router=inject(Router)
+  //router=inject(Router)
   toaster=inject(ToastrService);
   
   onSubmit()

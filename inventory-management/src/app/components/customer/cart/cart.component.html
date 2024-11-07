@@ -6,7 +6,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
 
-      <h2 *ngIf="productlist" class="text-center">Your Products {{ selectedProductName }}</h2>
+      <h2 *ngIf="cart" class="text-center">Your Products {{ selectedProductName }}</h2>
 
       <table class="table table-striped table-bordered">
         <thead class="thead-light">
@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of productlist">
+          <tr *ngFor="let product of cart">
             <td>{{ product.productName }}</td>
             <td>{{ product.quantity }}</td>
             <td>{{product.price}}</td>
@@ -29,7 +29,7 @@
               </button>
             </td>
           </tr>
-          <tr *ngIf="productlist.length === 0">
+          <tr *ngIf="cart.length === 0">
             <td colspan="4" class="text-center">No orders found</td>
           </tr>
         </tbody>

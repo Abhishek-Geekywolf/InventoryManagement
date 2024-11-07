@@ -33,9 +33,17 @@ export class CustomerdashboardComponent {
 
   cart: any[] = [];
 
+  customerId: number=0;
 
   ngOnInit() {
     this.loadProducts();
+
+    this.customerId = Number(localStorage.getItem('custId'));
+    
+    // Load the customer's cart
+    if (this.customerId) {
+      this.cart = this.service.getCart(this.customerId);
+    }
   }
 
   loadProducts() {
@@ -72,7 +80,11 @@ export class CustomerdashboardComponent {
     console.log('Product added to cart:', this.selectedProduct.productName);
     console.log('Quantity:', this.quantity);
     console.log('id:', this.selectedProduct);
-    this.service.addToCart(this.selectedProduct, this.quantity);
+    if (this.customerId) {
+      this.service.addToCart(this.customerId, this.selectedProduct, this.quantity);
+      alert('Product added to cart!');
+    }
+   // this.service.addToCart(this.selectedProduct, this.quantity);
   }
 
 
