@@ -5,27 +5,33 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-                
+
                 <div class="form-group mb-3">
                     <label for="productName">Product Name</label>
-                    <input id="productName" type="text" class="form-control" formControlName="productName" placeholder="Enter Product">
-                    <div *ngIf="productForm.get('productName')?.invalid && (productForm.get('productName')?.touched || productForm.get('productName')?.dirty)" class="text-danger">
+                    <input id="productName" type="text" class="form-control" formControlName="productName"
+                        placeholder="Enter Product">
+                    <div *ngIf="productForm.get('productName')?.invalid && (productForm.get('productName')?.touched || productForm.get('productName')?.dirty)"
+                        class="text-danger">
                         Product Name is required.
                     </div>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="productPrice">Product Price</label>
-                    <input id="price" type="number" class="form-control" formControlName="price" placeholder="Enter Price">
-                    <div *ngIf="productForm.get('price')?.invalid && (productForm.get('price')?.touched || productForm.get('price')?.dirty)" class="text-danger">
+                    <input id="price" type="number" class="form-control" formControlName="price"
+                        placeholder="Enter Price">
+                    <div *ngIf="productForm.get('price')?.invalid && (productForm.get('price')?.touched || productForm.get('price')?.dirty)"
+                        class="text-danger">
                         Price is required and must be a positive number.
                     </div>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="totalQuantity">Product Quantity</label>
-                    <input id="totalQuantity" type="number" class="form-control" formControlName="totalQuantity" placeholder="Enter Quantity">
-                    <div *ngIf="productForm.get('totalQuantity')?.invalid && (productForm.get('totalQuantity')?.touched || productForm.get('totalQuantity')?.dirty)" class="text-danger">
+                    <input id="totalQuantity" type="number" class="form-control" formControlName="totalQuantity"
+                        placeholder="Enter Quantity">
+                    <div *ngIf="productForm.get('totalQuantity')?.invalid && (productForm.get('totalQuantity')?.touched || productForm.get('totalQuantity')?.dirty)"
+                        class="text-danger">
                         Quantity is required and must be at least 1.
                     </div>
                 </div>

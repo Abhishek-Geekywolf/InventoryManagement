@@ -17,8 +17,6 @@ export class SellerApiService {
 
   url:string='https://localhost:7115/api/Seller';
   public router = inject(Router); 
-  public sellerid:number=0;
-  public custid:number=0;
 
   public name: string = '';
   
@@ -27,12 +25,9 @@ export class SellerApiService {
 
 
   http=inject(HttpClient)
- 
+  toaster=inject(ToastrService);
   
- setsellerid(id:number)
- {
-   this.sellerid=id;
- } 
+ 
 
  
 
@@ -40,15 +35,27 @@ export class SellerApiService {
   {
     this.http.post('https://localhost:7115/api/Seller',seller).subscribe(
     {
-      next:(response:any)=>
+      next:(response:any)=>{
+      if(response!=0)
       {
-        //alert("selleradded")
-      //  this.toaster.success("seller added","success");
+        alert("selleradded")
+        this.toaster.success("seller added","success");
         this.router.navigate(['/seller/login']);
 
       }
-    }
-  )}
+      
+      },
+      error: (error) => {
+        console.error("Error fetching products:", error);
+        alert("Email already exists");
+        this.toaster.success("seller added","success");
+        this.router.navigate(['/seller/signup']);
+
+      }
+    });
+  }
+      
+   
 checkseller(seller:sellerlogin){
  return this.http.get(`https://localhost:7115/api/Seller?email=${seller.email}&password=${seller.password}`)}
 
@@ -67,7 +74,7 @@ checkcustomer(customer:customerlogin){
       {
         if(response!=0){
           alert("customerfound")
-          this.custid=response;
+          localStorage.setItem('custId',response)
           this.router.navigate(['/customer-dash']);
         }
         else{
@@ -150,8 +157,8 @@ updateProduct(sellerid:number,productData:any){
   return this.http.put(`https://localhost:7115/api/SellerProduct/name?id=${sellerid}`,productData);
 
 }
-getCustomerOrderHistory(custid:number){
-  return this.http.get(`https://localhost:7115/api/Order/CustId?id=${custid}`);
+getCustomerOrderHistory(id:number){
+  return this.http.get(`https://localhost:7115/api/Order?id=${id}`);
 }
 
 
@@ -159,5 +166,16 @@ createOrder(orderRequest:any)
 {
   return this.http.post("https://localhost:7115/api/OrderDetails",orderRequest)
 }
+addProduct(product :Product):void
+  {
+    this.http.post("https://localhost:7115/api/SellerProduct",product).subscribe(
+      {
+        next:(response:any)=>{
+         this.toaster.success("product added","success");
+          
+        }
+      }
+    )
+  }
 
 }

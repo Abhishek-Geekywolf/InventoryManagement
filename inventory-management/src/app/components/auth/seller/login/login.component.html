@@ -4,22 +4,24 @@
         <div class="col-md-6">
             <form [formGroup]="sellerloginForm" (ngSubmit)="onSubmit()">
 
-               
+
 
                 <div class="form-group mb-3">
                     <label>Email</label>
                     <input type="email" class="form-control" formControlName="email" placeholder="Enter Email">
-                    <div *ngIf="sellerloginForm.get('email')?.invalid && (sellerloginForm.get('email')?.touched || sellerloginForm.get('email')?.dirty)" class="text-danger">
+                    <div *ngIf="sellerloginForm.get('email')?.invalid && (sellerloginForm.get('email')?.touched || sellerloginForm.get('email')?.dirty)"
+                        class="text-danger">
                         Email is required.
                     </div>
                 </div>
 
-                
+
 
                 <div class="form-group mb-3">
                     <label>Password</label>
                     <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
-                    <div *ngIf="sellerloginForm.get('password')?.invalid && (sellerloginForm.get('password')?.touched || sellerloginForm.get('password')?.dirty)" class="text-danger">
+                    <div *ngIf="sellerloginForm.get('password')?.invalid && (sellerloginForm.get('password')?.touched || sellerloginForm.get('password')?.dirty)"
+                        class="text-danger">
                         Password is required.
                     </div>
                 </div>

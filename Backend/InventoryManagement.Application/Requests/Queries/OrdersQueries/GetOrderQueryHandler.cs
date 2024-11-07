@@ -25,7 +25,7 @@ namespace InventoryManagement.Application.Requests.Queries.OrdersQueries
             var re = await Task.Run(() =>
             {
                 List<OrdersDto> result = new List<OrdersDto>();
-                var orders = _context.Orders.Include(x => x.OrderDetails).ThenInclude(y=>y.SellerProduct);
+                var orders = _context.Orders.Include(x => x.OrderDetails).ThenInclude(y=>y.SellerProduct).Where(x=>x.CustomerID==request.getId);
                 foreach (var order in orders)
                 {
                     OrdersDto obj = new OrdersDto();

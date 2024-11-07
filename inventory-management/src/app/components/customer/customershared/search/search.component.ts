@@ -5,7 +5,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [NgSelectModule,FormsModule],
+  imports: [NgSelectModule, FormsModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
 })
@@ -13,21 +13,20 @@ export class SearchComponent {
 
   @Output() filterChanged = new EventEmitter<object>();
   @Output() searchChanged = new EventEmitter<string>();
-  
+
   options = [
     { id: 'all-products', name: 'all-products' },
     { id: 'price-low-to-high', name: 'price-low-to-high' },
     { id: 'price-high-to-low', name: 'price-high-to-low' },
-    //{ id: 'most-ordered', name: 'most-ordered' }
   ];
 
-  searchQuery: string = ''; 
+  searchQuery: string = '';
   onSearch() {
-    this.searchChanged.emit(this.searchQuery); // Emit the search query to the parent
+    this.searchChanged.emit(this.searchQuery); 
   }
 
 
   onFilterChange(selectedFilter: object): void {
-    this.filterChanged.emit(selectedFilter);  // Emit the selected filter
+    this.filterChanged.emit(selectedFilter);  
   }
 }

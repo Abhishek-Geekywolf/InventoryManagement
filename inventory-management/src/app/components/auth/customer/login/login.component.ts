@@ -10,37 +10,35 @@ import { SellerApiService } from '../../../../service/sellerapi.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,RouterLink,RouterLinkActive],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, RouterLinkActive],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class CLoginComponent implements OnInit{
+export class CLoginComponent implements OnInit {
 
 
-  customerloginForm:FormGroup;
+  customerloginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.customerloginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password:['',Validators.required]
+      password: ['', Validators.required]
     });
   }
-service=inject(SellerApiService);
+  service = inject(SellerApiService);
 
   ngOnInit(): void {
-    
+
   }
 
-  onSubmit()
-  {
-    if(this.customerloginForm.valid)
-      {
-        const customer: customerlogin = this.customerloginForm.value; 
-        console.log('Form Submitted!', customer);
-        this.service.checkcustomer(customer);
-      } else {
-        console.log('Form is invalid');
-      }
+  onSubmit() {
+    if (this.customerloginForm.valid) {
+      const customer: customerlogin = this.customerloginForm.value;
+      console.log('Form Submitted!', customer);
+      this.service.checkcustomer(customer)
+    } else {
+      console.log('Form is invalid');
+    }
 
   }
 

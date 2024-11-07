@@ -30,12 +30,12 @@ service=inject(SellerApiService);
   searchQuery: string = ''; 
   selectedFilter: string = 'all';
   onSearch() {
-    this.searchChanged.emit(this.searchQuery); // Emit the search query to the parent
+    this.searchChanged.emit(this.searchQuery); 
   }
 
 
   onFilterChange() {
-    this.filterChanged.emit(this.selectedFilter);  // Emit the selected filter to the parent component
+    this.filterChanged.emit(this.selectedFilter); 
   }
 
 

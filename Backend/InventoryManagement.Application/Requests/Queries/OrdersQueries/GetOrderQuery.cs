@@ -10,5 +10,6 @@ namespace InventoryManagement.Application.Requests.Queries.OrdersQueries
 {
     public class GetOrderQuery:IRequest<List<OrdersDto>>
     {
+        public int getId { get; set; } 
     }
 }

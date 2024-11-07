@@ -18,30 +18,26 @@ import { Router } from '@angular/router';
 export class CartComponent {
   products: Product[] = [];
   orders: Order[] = [];
-  selectedProductName: string = ''; 
-  selectedSellerId: number=1;
+  selectedProductName: string = '';
+  selectedSellerId: number = 1;
   productToDelete: any;
 
-  //subprice:number=0;
-  constructor(){}
+  constructor() { }
 
-  
-  @Input() productlist:any = []; 
-  @Input() totalPrice:number=0;
-  // @Input() custid:number=0;
 
-  service=inject(SellerApiService);
+  @Input() productlist: any = [];
+  @Input() totalPrice: number = 0;
+
+  service = inject(SellerApiService);
 
   ngOnInit(): void {
-    // this.products = this.purchaseservice.getProducts();
-    // this.loadOrders(); // Load all orders by default
+
     this.productlist = this.service.getCart();
-   // console.log('cart list');
-   this.totalPrice=this.service.getTotalPrice();
-    
-    console.log('cart list',this.productlist);
-    console.log('cart-list-total',this.totalPrice);
-    
+    this.totalPrice = this.service.getTotalPrice();
+
+    console.log('cart list', this.productlist);
+    console.log('cart-list-total', this.totalPrice);
+
   }
 
   openDeleteModal(product: any): void {
@@ -52,67 +48,47 @@ export class CartComponent {
     if (this.productToDelete) {
       const index = this.productlist.findIndex((item: { id: any; }) => item.id === this.productToDelete.id);
       if (index !== -1) {
-        this.productlist.splice(index, 1); 
+        this.productlist.splice(index, 1);
       }
 
-      // Recalculate the total price after deletion
       this.totalPrice = this.productlist.reduce((acc: any, item: { price: any; }) => acc + item.price, 0);
-      
-      // Optionally, update the cart in the service
-      //this.sellerApiService.updateCart(this.productlist, this.totalPrice);
 
-      // Close the modal (Bootstrap modal close)
-      //$('#Delete').modal('hide');
 
-      // const modalElement = document.getElementById('Delete');
-      // const modal = bootstrap.Modal.getInstance(modalElement); // Get the modal instance
-      // modal.hide(); 
-
-      // Optionally, show a success message or alert
       console.log('Product removed. Updated total price:', this.totalPrice);
     }
   }
 
-  router=inject(Router)
+  router = inject(Router)
 
 
   buyNow() {
     const orderRequest = {
       orderDate: new Date(),
-      customerId: this.service.custid,
-      orderItems: this.productlist.map((product: {productName: any; id: any; quantity: number; price: number; }) => 
-        ({
+      customerId: Number(localStorage.getItem('custId')),
+      orderItems: this.productlist.map((product: { productName: any; id: any; quantity: number; price: number; }) =>
+      ({
         sellerProductId: product.id,
-        productName:product.productName,
+        productName: product.productName,
         quantity: product.quantity,
-        subTotalPrice: product.price 
-        })),
-      };
-  
+        subTotalPrice: product.price
+      })),
+    };
+
     console.log(orderRequest);
     this.service.createOrder(orderRequest).subscribe(
       {
-        next:(response:any)=>{
+        next: (response: any) => {
           console.log('Order created successfully', response);
-          // alert(`Order placed successfully! Order ID: ${response.OrderId}`);
           alert("order placed");
         },
-        error: (error) =>{
+        error: (error) => {
           console.error('Error placing order:', error);
           alert('Error placing order. Please try again.');
         }
       }
-      
+
     );
-    this.router.navigate(['/customer-dash']); 
+    this.router.navigate(['/customer-dash']);
   }
-  
+
 }
-// response => {
-//   console.log('Order created successfully', response);
-//  // alert(`Order placed successfully! Order ID: ${response.OrderId}`);
-//  alert("order placed");
-// },
-// error => {
-//   console.error('Error placing order:', error);
-//   alert('Error placing order. Please try again.');

@@ -26,9 +26,10 @@ namespace InventoryManagement.Api.Controllers.Orders
             return await _mediator.Send(command);
         }
         [HttpGet]
-        public async Task<List<OrdersDto>>GetOrders()
+        public async Task<List<OrdersDto>>GetOrders(int id)
         {
             GetOrderQuery query = new GetOrderQuery();
+            query.getId = id;
             return await _mediator.Send(query);
         }
 
