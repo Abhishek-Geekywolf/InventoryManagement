@@ -63,20 +63,10 @@ checkseller(seller:sellerlogin){
 
 
 AddCustomer(customer:customerlogin){
-  this.http.post('https://localhost:7115/api/Customer',customer).subscribe({
+  return this.http.post('https://localhost:7115/api/Customer',customer)
+}
 
-  next:(response:any)=>{
-    if(response!=0){
-     alert("customerinserted")
-     this.toaster.success("customer added","success");
-     this.router.navigate(['/customer/login']);
 
-    }
-    else{
-      alert("failed")
-    }
-  }
-})}
 
 checkcustomer(customer:customerlogin){
   this.http.get(`https://localhost:7115/api/Customer?email=${customer.email}&password=${customer.password}`).subscribe({
@@ -124,7 +114,7 @@ addToCart(product: any, quantity: number): void {
     }
     else{
       existingProduct.quantity += quantity;
-      this.toaster.success("product added to cart","success");
+     // this.toaster.success("product added to cart","success");
       existingProduct.price = existingProduct.quantity * product.price;
     }
   } 
@@ -142,7 +132,7 @@ addToCart(product: any, quantity: number): void {
         id: product.sellerProductId
       };
       this.cart.push(cartProduct);
-      this.toaster.success("product added to cart","success");
+     // this.toaster.success("product added to cart","success");
 
           }
   }
