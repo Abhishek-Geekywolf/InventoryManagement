@@ -1,6 +1,7 @@
 ﻿using InventoryManagement.Application.Requests.Commands.SellerCommands;
 using InventoryManagement.Application.Requests.Commands.SellerProductCommands;
 using InventoryManagement.Application.Requests.DTOs;
+using InventoryManagement.Application.Requests.Queries.SellerProductsQueries;
 using InventoryManagement.Application.Requests.Queries.SellerQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +31,15 @@ namespace InventoryManagement.Api.Controllers.Sellers
             query.Email = email;
             query.Password = password;
             
+            return await _mediator.Send(query);
+        }
+
+        [HttpGet("ProductName")]
+        public async Task<List<SellerProductDto>>getProduct(string? name,int id)
+        {
+            FilterProducts query= new FilterProducts();
+            query.id = id;
+            query.ProductName = name;
             return await _mediator.Send(query);
         }
     }
