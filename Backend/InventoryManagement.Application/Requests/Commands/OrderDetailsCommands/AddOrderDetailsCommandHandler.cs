@@ -38,19 +38,12 @@ namespace InventoryManagement.Application.Requests.Commands.OrderDetailsCommands
                     Quantity = item.Quantity,
                     SubTotalPrice = item.SubTotalPrice
                 };
-                _context.OrderDetails.Add(orderDetails);
+                orders.OrderDetails.Add(orderDetails);
 
                 PriceQuantityUpdate obj = new PriceQuantityUpdate(_context);
                 obj.Update(orderDetails, item.SellerProductID);
 
             }
-
-            //orderdetails.SellerProductID = request.SellerProductId;
-            //orderdetails.Quantity = request.Quantity;
-            //orderdetails.OrderID = orders.Id;
-            //_context.OrderDetails.Add(orderDetails);
-            //PriceQuantityUpdate obj = new PriceQuantityUpdate(_context);
-            //obj.Update(orderDetails, item.SellerProductId);
             return await _context.SaveChangesAsync();
 
 

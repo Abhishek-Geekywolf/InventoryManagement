@@ -1,4 +1,5 @@
 ﻿using InventoryManagement.Domain.Entity;
+using InventoryManagement.Infrastructure.configuration;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,18 +19,14 @@ namespace InventoryManagement.Infrastructure.Data
 
         public DbSet<SellerProducts>SellerProducts { get; set; }
 
-        public DbSet<Customers> Customers { get; set; } 
+        public DbSet<Customers> Customers { get; set; }
+
+
         public DbSet<Orders> Orders { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Sellers>()
-                .HasIndex(s => s.Email)
-                .IsUnique();
-            modelBuilder.Entity<Customers>()
-               .HasIndex(s => s.Email)
-               .IsUnique();
-
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new SellerConfiguration());
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
         }
 
 

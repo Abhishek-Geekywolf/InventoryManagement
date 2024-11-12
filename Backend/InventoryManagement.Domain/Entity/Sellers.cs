@@ -19,6 +19,7 @@ namespace InventoryManagement.Domain.Entity
         public string Password { get; set; }
 
         public List<SellerProducts> SellerProducts { get; set; }
+       
 
 
     }

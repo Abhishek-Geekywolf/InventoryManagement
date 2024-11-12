@@ -20,11 +20,7 @@ namespace InventoryManagement.Application.Requests.Commands.CustomerCommands
 
         public async Task<int> Handle(AddCustomerCommand request, CancellationToken cancellationToken)
         {
-            Customers customers = new Customers();
-            customers.Name = request.Name;
-            customers.Email = request.Email;
-            customers.PhoneNumber = request.PhoneNumber;
-            customers.Password = request.Password;
+            Customers customers = new Customers(request.Name, request.Email, request.PhoneNumber, request.Password);
             _context.Customers.Add(customers);
             return await _context.SaveChangesAsync();
         }
